@@ -3,11 +3,19 @@ import { createServer } from "http";
 import config from "config";
 import logger from "./utils/logger";
 import { version } from "../package.json";
+import connectDB from "./db/mongoose";
+import wordRoutes from "./routes/wordRoutes";
+
+connectDB();
 
 const port = config.get<number>("port");
 const host = config.get<string>("host");
 
 const app = express();
+
+app.use(express.json());
+
+app.use("/api/dictionary", wordRoutes);
 
 const httpServer = createServer(app);
 

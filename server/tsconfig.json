@@ -1,7 +1,13 @@
 {
+  "baseUrl": "src/",
   "compilerOptions": {
+    "baseUrl": ".",
     "resolveJsonModule": true,
     "target": "es5",
+    "paths": {
+      "@src": ["src"],
+      "@src/*": ["src/*"]
+    },
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
