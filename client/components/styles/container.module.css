@@ -1,0 +1,18 @@
+.nav {
+  height: 15vh;
+  background: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navroutes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navroutes a {
+  margin: 0rem 1rem;
+  color: var(--orange);
+}
