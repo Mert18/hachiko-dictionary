@@ -3,6 +3,7 @@ import Word from "../db/models/word";
 import { IWord } from "../types";
 
 export const createWord: RequestHandler = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const word = new Word(req.body);
 
   try {

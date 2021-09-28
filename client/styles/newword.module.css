@@ -1,0 +1,27 @@
+.form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.inputcontainer input {
+  height: 8vh;
+  padding: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.inputcontainer textarea {
+  padding: 0.3rem;
+  min-height: 10vh;
+}
+.form button {
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
