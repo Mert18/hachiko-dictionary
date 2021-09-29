@@ -1,6 +1,6 @@
 import Container from "../../components/Container";
 
-export default function Word(){
+const Word = () => {
   return(
     <Container>
       <div>
@@ -9,3 +9,5 @@ export default function Word(){
     </Container>
   )
 }
+
+export default Word;

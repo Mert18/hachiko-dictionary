@@ -10,8 +10,8 @@ import {
 const router = Router();
 
 router.get("/getwords", getWords);
-router.post("/createWord", createWord);
-router.put("/updateWord", updateWord);
-router.delete("/deleteWord", deleteWord);
+router.post("/createword", createWord);
+router.put("/updateword", updateWord);
+router.delete("/deleteword", deleteWord);
 
 export default router;

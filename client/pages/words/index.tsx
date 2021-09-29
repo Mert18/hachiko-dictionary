@@ -1,6 +1,11 @@
 import Container from "../../components/Container";
+import getConfig from "next/config";
+import axios from "axios";
+import { GetStaticProps} from "next";
 
-export default function Words(){
+const Words = ({words}: any) => {
+  console.log(words)
+    
   return(
     <Container>
       <div>
@@ -9,3 +14,17 @@ export default function Words(){
     </Container>
   )
 }
+
+export const getStaticProps: GetStaticProps = async () => { // must be async
+  const {publicRuntimeConfig} = getConfig();
+
+  const words = await axios.get(`${publicRuntimeConfig.GET_WORDS}`)
+  return {
+    props: {
+      words
+    },
+  };
+};
+
+
+export default Words;

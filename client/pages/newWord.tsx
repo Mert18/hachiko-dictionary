@@ -1,8 +1,9 @@
 import Container from "../components/Container";
 import classes from "../styles/newword.module.css";
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useState} from "react";
 import axios from "axios";
+import getConfig from "next/config";
 
 const NewWord: NextPage = () => {
   const [word, setWord] = useState<string>("");
@@ -12,32 +13,51 @@ const NewWord: NextPage = () => {
   const [antonyms, setAntonyms] = useState<string>("");
   const [examples, setExamples] = useState<string>("");
   const [pass, setPass] = useState<string>("");
-  let myPass = process.env.password;
+  const [message, setMessage] = useState<string>("");
+  const {publicRuntimeConfig} = getConfig();
 
   const submitHandler = async (e: any) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/api/dictionary/createWord", {
-        title: word,
-        description: desc,
-        kind: kind,
-        synonyms: synonyms,
-        antonyms: antonyms,
-        sentences: examples,
-      });
-    } catch (error: any) {
+      if(pass == publicRuntimeConfig.password){
+        await axios.post(`${publicRuntimeConfig.MY_URI}`, {
+          title: word,
+          description: desc,
+          kind: kind,
+          synonyms: synonyms,
+          antonyms: antonyms,
+          sentences: examples,
+        });
+        setMessage(`${word} is successfully added.`)
+      }else{
+        console.log("do you think you are smart?")
+          setWord("");
+          setDesc("");
+          setKind("");
+          setSynonyms("")
+          setAntonyms("");
+          setExamples("");
+
+      }
+        } catch (error: any) {
       console.log("Error creating word", error.message);
     }
   };
 
   return (
     <Container>
+      <div className={classes.notify}>
+        {message ? 
+        <h2>{message}</h2> 
+        : ""}
+      </div>
       <form onSubmit={submitHandler} className={classes.form}>
         <div className={classes.inputcontainer}>
           <label htmlFor="word">Word</label>
           <input
             type="text"
             id="word"
+            value={word}
             onChange={(e) => {
               setWord(e.target.value);
             }}

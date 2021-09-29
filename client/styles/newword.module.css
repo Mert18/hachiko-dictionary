@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--white);
 }
 .inputcontainer {
   display: flex;
@@ -16,12 +17,22 @@
   padding: 1rem;
   font-size: 1.3rem;
   text-align: center;
+  border: 1px solid var(--orange);
 }
 .inputcontainer textarea {
   padding: 0.3rem;
   min-height: 10vh;
+  border: 1px solid var(--orange);
 }
 .form button {
   padding: 0.5rem 1rem;
   margin: 1rem;
+  border: 1px solid var(--orange);
+}
+
+.notify {
+  text-align: center;
+  padding: 2rem;
+  background: limegreen;
+  color: white;
 }
