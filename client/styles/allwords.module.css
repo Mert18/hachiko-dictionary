@@ -16,4 +16,8 @@
   grid-area: words;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 1100px) {
 }

@@ -4,7 +4,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import classes from "../../styles/wordpage.module.css";
 
 const Word = (word: any) => {
-  console.log(word.word[0]);
   return (
     <Container>
       <div className={classes.singleword}>
@@ -14,9 +13,11 @@ const Word = (word: any) => {
         <div className={classes.singleword__kind}>
           <p>{word.word[0].kind}</p>
         </div>
-        <div className={classes.singleword__desc}>
-          <p>{word.word[0].description}</p>
-        </div>
+        <ul className={classes.singleword__desc}>
+          {word.word[0].description.map((el: any) => (
+            <li key={el}>{el}</li>
+          ))}
+        </ul>
 
         {word.word[0].synonyms.length >= 2 ? (
           <ul className={classes.singleword__syn}>

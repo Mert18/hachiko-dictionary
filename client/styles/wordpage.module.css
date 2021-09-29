@@ -19,13 +19,18 @@
 
 .singleword__desc {
   padding: 1rem 0.4rem;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin: 1.5rem 0rem;
+  list-style: none;
+}
+.singleword__desc li {
+  margin: 1rem 0rem;
 }
 
 .singleword__syn {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   margin: 1.5rem 0rem;
 }
 .singleword__syn li {
@@ -37,6 +42,7 @@
 }
 .singleword__ant {
   list-style: none;
+  flex-wrap: wrap;
   display: flex;
   margin: 1.5rem 0rem;
 }
@@ -52,4 +58,28 @@
   list-style: none;
   margin: 2rem 0rem 2rem 0rem;
   font-size: 1.1rem;
+}
+
+@media (max-width: 1100px) {
+  .singleword {
+    width: 80%;
+  }
+  .singleword__word {
+    font-size: 2rem;
+  }
+  .singleword__desc {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .singleword {
+    width: 95%;
+  }
+  .singleword__word {
+    font-size: 1.8rem;
+  }
+  .singleword__desc {
+    font-size: 1rem;
+  }
 }
