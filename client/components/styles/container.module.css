@@ -1,9 +1,20 @@
 .nav {
-  height: 10vh;
+  height: 12vh;
   background: var(--white);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 15px solid var(--orange);
+  position: relative;
+}
+.nav::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  height: 8px;
+  background: var(--black);
+  width: 100%;
 }
 
 .navroutes {

@@ -1,0 +1,55 @@
+.singleword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+  width: 70%;
+}
+
+.singleword__word {
+  color: var(--orange);
+  font-size: 2rem;
+}
+
+.singleword__kind {
+  padding: 1rem 0.4rem;
+  font-weight: 700;
+}
+
+.singleword__desc {
+  padding: 1rem 0.4rem;
+  font-size: 1.6rem;
+  margin: 1.5rem 0rem;
+}
+
+.singleword__syn {
+  list-style: none;
+  display: flex;
+  margin: 1.5rem 0rem;
+}
+.singleword__syn li {
+  margin: 0rem 1rem 0rem 0rem;
+  padding: 0.5rem 1rem;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 30px;
+}
+.singleword__ant {
+  list-style: none;
+  display: flex;
+  margin: 1.5rem 0rem;
+}
+.singleword__ant li {
+  margin: 0rem 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 30px;
+}
+
+.singleword__sentences {
+  list-style: none;
+  margin: 2rem 0rem 2rem 0rem;
+  font-size: 1.1rem;
+}

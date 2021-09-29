@@ -1,0 +1,27 @@
+.wordcard {
+  width: 30%;
+  min-height: 17vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  color: var(--orange);
+  margin: 0.7rem;
+  padding: 1rem;
+  border: 1px solid var(--orange);
+}
+
+.wordcard__title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 0.4rem;
+}
+.wordcard__desc {
+  font-size: 1.1rem;
+  color: var(--black);
+  padding: 0.4rem;
+}
+.wordcard a {
+  text-decoration: underline;
+  padding: 0.4rem;
+}

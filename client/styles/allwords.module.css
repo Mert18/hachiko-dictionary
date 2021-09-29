@@ -1,0 +1,19 @@
+.allwords {
+  display: grid;
+  grid-template-columns: 5vw auto 5vw;
+  grid-template-rows: 5vh 20vh auto 5vh;
+  grid-template-areas:
+    ". . ."
+    ". head ."
+    ". words ."
+    ". . .";
+}
+
+.allwords h1 {
+  grid-area: head;
+}
+.allwords__list {
+  grid-area: words;
+  display: flex;
+  flex-wrap: wrap;
+}

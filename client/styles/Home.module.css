@@ -5,6 +5,7 @@
   grid-template-areas:
     "hero hero hero"
     ". . .";
+  background: var(--white);
 }
 
 .hero {
@@ -49,4 +50,14 @@
 .hero__input input::placeholder {
   color: var(--orange);
   opacity: 0.6;
+}
+.hero__input a {
+  background: var(--orange);
+  height: 12vh;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 1.2rem;
 }

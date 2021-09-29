@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import NextLink from 'next/link';
-import classes from "./styles/container.module.css"
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import NextLink from "next/link";
+import classes from "./styles/container.module.css";
 
-import Footer from './Footer';
+import Footer from "./Footer";
 
-export default function Container(props: any){
+export default function Container(props: any) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -14,13 +14,13 @@ export default function Container(props: any){
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Hachiko Dictionary. Love words.',
+    title: "Hachiko Dictionary. Love words.",
     description: `English to English dictionary. Find and learn the meaning of words.`,
-    type: 'website',
-    ...customMeta
+    type: "website",
+    ...customMeta,
   };
 
-  return(
+  return (
     <>
       <Head>
         <title>{meta.title}</title>
@@ -34,26 +34,16 @@ export default function Container(props: any){
       </Head>
       <nav className={classes.nav}>
         <div className={classes.navroutes}>
-
           <NextLink href="/">
-            <a>
-              Home
-            </a>
+            <a>Home</a>
           </NextLink>
           <NextLink href="/words">
-            <a>
-              Words
-            </a>
+            <a>Words</a>
           </NextLink>
-
         </div>
       </nav>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
-  )
+  );
 }
-
-
