@@ -1,7 +1,7 @@
 .form {
   padding: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background: var(--white);
@@ -11,11 +11,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin: 0.5rem;
 }
 .inputcontainer input {
-  height: 8vh;
-  padding: 1rem;
-  font-size: 1.3rem;
+  height: 6vh;
+  padding: 0.5rem;
+  font-size: 1rem;
   text-align: center;
   border: 1px solid var(--orange);
 }

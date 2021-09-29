@@ -14,7 +14,6 @@ const host = config.get<string>("host");
 const app = express();
 
 app.use(express.json());
-
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -27,10 +26,6 @@ app.use(function (req, res, next) {
 app.use("/api/dictionary", wordRoutes);
 
 const httpServer = createServer(app);
-
-app.get("/", (_, res) =>
-  res.send(`Server is up and running version ${version}`)
-);
 
 httpServer.listen(port, host, () => {
   logger.info(`🚀 Server version ${version} is listening 🚀`);

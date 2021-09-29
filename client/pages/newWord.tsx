@@ -19,16 +19,22 @@ const NewWord: NextPage = () => {
   const submitHandler = async (e: any) => {
     e.preventDefault();
     try {
+      const allDescriptions = desc.split("--");
+      const allSynonyms = synonyms.split(", ");
+      const allAntonyms = antonyms.split(", ");
+      const allSentences = examples.split("--");
+
       if(pass == publicRuntimeConfig.password){
         await axios.post(`${publicRuntimeConfig.MY_URI}`, {
           title: word,
-          description: desc,
+          description: allDescriptions,
           kind: kind,
-          synonyms: synonyms,
-          antonyms: antonyms,
-          sentences: examples,
+          synonyms: allSynonyms,
+          antonyms: allAntonyms,
+          sentences: allSentences,
         });
-        setMessage(`${word} is successfully added.`)
+        
+       setMessage(`${word} is successfully added.`)
       }else{
         console.log("do you think you are smart?")
           setWord("");
@@ -65,7 +71,7 @@ const NewWord: NextPage = () => {
         </div>
 
         <div className={classes.inputcontainer}>
-          <label htmlFor="desc">Description</label>
+          <label htmlFor="desc">Description(--)</label>
           <textarea id="desc" onChange={(e) => setDesc(e.target.value)} />
         </div>
 
@@ -75,7 +81,7 @@ const NewWord: NextPage = () => {
         </div>
 
         <div className={classes.inputcontainer}>
-          <label htmlFor="synonyms">Synonyms</label>
+          <label htmlFor="synonyms">Synonyms (,)</label>
           <textarea
             id="synonyms"
             onChange={(e) => setSynonyms(e.target.value)}
@@ -83,7 +89,7 @@ const NewWord: NextPage = () => {
         </div>
 
         <div className={classes.inputcontainer}>
-          <label htmlFor="antonyms">Antonyms</label>
+          <label htmlFor="antonyms">Antonyms(,)</label>
           <textarea
             id="antonyms"
             onChange={(e) => setAntonyms(e.target.value)}
@@ -91,7 +97,7 @@ const NewWord: NextPage = () => {
         </div>
 
         <div className={classes.inputcontainer}>
-          <label htmlFor="examples">Example Sentences</label>
+          <label htmlFor="examples">Example Sentences(--)</label>
           <textarea
             id="examples"
             onChange={(e) => setExamples(e.target.value)}
