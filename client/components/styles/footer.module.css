@@ -1,0 +1,12 @@
+.footer {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--whiteorange);
+}
+.externallink {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  font-weight: 300;
+}

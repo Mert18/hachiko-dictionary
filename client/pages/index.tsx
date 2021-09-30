@@ -19,7 +19,7 @@ const Home: NextPage = ({ words }: any) => {
   return (
     <Container>
       <div className={classes.home}>
-        <div className={classes.hero}>
+        <section className={classes.hero}>
           <div className={classes.hero__title}>
             <h1>Hachiko Dictionary</h1>
             <p>Where everything makes sense.</p>
@@ -49,7 +49,42 @@ const Home: NextPage = ({ words }: any) => {
               ""
             )}
           </div>
-        </div>
+        </section>
+
+        <section className={classes.homebelow}>
+          <div className={classes.wordoftheday}>
+            <h2>
+              Contend<span className={classes.actualkind}>verb</span>
+            </h2>
+
+            <p>Some definition of thecontend.</p>
+          </div>
+          <div className={classes.hachikodictionary}>
+            <p>
+              <span className={classes.brandname}>Hachiko Dictionary</span> is
+              more a learning project than an actual dictionary. Most of the
+              words are taken from reliable sources like{" "}
+              <a
+                className={classes.externallink}
+                href="https://www.merriam-webster.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Merriam Webster
+              </a>{" "}
+              and{" "}
+              <a
+                className={classes.externallink}
+                href="https://dictionary.cambridge.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cambridge Dictionary
+              </a>
+              .
+            </p>
+          </div>
+        </section>
       </div>
     </Container>
   );

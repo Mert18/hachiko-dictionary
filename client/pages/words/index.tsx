@@ -23,7 +23,7 @@ const Words = () => {
   return (
     <Container>
       <div className={classes.allwords}>
-        <h1>All words that I supposed to know.</h1>
+        <h1>Some words that I am supposed to know.</h1>
         <ul className={classes.allwords__list}>
           {mounted &&
             words.map((word) => (

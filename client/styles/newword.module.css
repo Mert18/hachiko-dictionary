@@ -24,6 +24,7 @@
   padding: 0.3rem;
   min-height: 10vh;
   border: 1px solid var(--orange);
+  resize: none;
 }
 .form button {
   padding: 0.5rem 1rem;

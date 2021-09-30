@@ -89,6 +89,77 @@
   color: var(--orange);
 }
 
+.homebelow {
+  display: grid;
+  grid-template-columns: 4vw 40vw 10vw 30vw 4vw;
+  grid-template-rows: 7vh auto 7vh;
+  grid-template-areas:
+    ". . . . ."
+    ". wordoftheday . hachikodictionary ."
+    ". . . . .";
+  height: 70vh;
+  gap: 30px;
+}
+.wordoftheday {
+  grid-area: wordoftheday;
+  border: 1px solid var(--orange);
+  padding: 2rem;
+  position: relative;
+  font-size: 1.4rem;
+  height: max-content;
+}
+.wordoftheday p {
+  font-size: 1.1rem;
+}
+.wordoftheday::before {
+  content: "Word Of The Day";
+  position: absolute;
+  top: -1rem;
+  left: 4%;
+  width: max-content;
+  height: 5vh;
+  background: var(--orange);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.hachikodictionary {
+  grid-area: hachikodictionary;
+  padding: 2rem;
+  border: 1px solid var(--orange);
+  height: max-content;
+  font-size: 1.2rem;
+  position: relative;
+}
+.hachikodictionary::before {
+  content: "What is It?";
+  position: absolute;
+  top: -1rem;
+  left: 4%;
+  background: var(--orange);
+  color: var(--white);
+  padding: 0.7rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.externallink {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  font-weight: 300;
+}
+
+.brandname {
+  color: var(--orange);
+  font-weight: 700;
+}
+
 @media (max-width: 1100px) {
   .hero__input input {
     height: 10vh;
@@ -96,6 +167,9 @@
   }
   .results {
     width: 60%;
+  }
+  .homebelow {
+    grid-template-columns: 4vw 40vw 1vw 30vw 1vw;
   }
 }
 
@@ -112,5 +186,13 @@
   }
   .actualkind {
     font-size: 0.7rem;
+  }
+  .homebelow {
+    grid-template-columns: 4vw 80vw 4vw;
+    grid-template-areas:
+      ". . ."
+      ". wordoftheday ."
+      ". hachikodictionary ."
+      ". . .";
   }
 }
