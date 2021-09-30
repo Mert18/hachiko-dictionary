@@ -1,7 +1,6 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import { createServer } from "http";
 import config from "config";
-import logger from "./utils/logger";
 import { version } from "../package.json";
 import connectDB from "./db/mongoose";
 import wordRoutes from "./routes/wordRoutes";
@@ -9,12 +8,11 @@ import wordRoutes from "./routes/wordRoutes";
 connectDB();
 
 const port = config.get<number>("port");
-const host = config.get<string>("host");
 
 const app = express();
 
 app.use(express.json());
-app.use(function (req, res, next) {
+app.use(function (req: Request, res: Response, next: NextFunction) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -25,9 +23,9 @@ app.use(function (req, res, next) {
 
 app.use("/api/dictionary", wordRoutes);
 
-const httpServer = createServer(app);
+const host = "0.0.0.0";
 
-httpServer.listen(port, host, () => {
-  logger.info(`🚀 Server version ${version} is listening 🚀`);
-  logger.info(`http://${host}:${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`🚀 Server version ${version} is listening 🚀`);
+  console.log(`http://${host}:${port}`);
 });
