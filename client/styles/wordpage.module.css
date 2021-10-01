@@ -1,10 +1,16 @@
+.singlewordpage {
+  display: grid;
+  grid-template-columns: 6vw 60vw 6vw;
+  grid-template-rows: 10vh auto 10vh;
+  grid-template-areas:
+    ". . ."
+    ". content ."
+    ". . .";
+  color: var(--black);
+}
+
 .singleword {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  padding: 2rem;
-  width: 70%;
+  grid-area: content;
 }
 
 .singleword__word {
@@ -13,73 +19,43 @@
 }
 
 .singleword__kind {
-  padding: 1rem 0.4rem;
-  font-weight: 700;
+  padding: 1rem 0rem;
 }
 
 .singleword__desc {
-  padding: 1rem 0.4rem;
-  font-size: 1.2rem;
-  margin: 1.5rem 0rem;
+  padding: 1rem 0rem;
   list-style: none;
-}
-.singleword__desc li {
-  margin: 1rem 0rem;
 }
 
 .singleword__syn {
+  padding: 1rem 0rem;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  margin: 1.5rem 0rem;
 }
 .singleword__syn li {
-  margin: 0rem 1rem 0rem 0rem;
-  padding: 0.5rem 1rem;
-  background: var(--green);
-  color: var(--white);
-  border-radius: 30px;
+  margin-right: 0.4rem;
 }
+
 .singleword__ant {
+  padding: 1rem 0rem;
   list-style: none;
-  flex-wrap: wrap;
   display: flex;
-  margin: 1.5rem 0rem;
 }
 .singleword__ant li {
-  margin: 0rem 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--red);
-  color: var(--white);
-  border-radius: 30px;
+  margin-right: 0.4rem;
 }
 
 .singleword__sentences {
   list-style: none;
-  margin: 2rem 0rem 2rem 0rem;
-  font-size: 1.1rem;
+  padding: 1rem 0rem;
 }
 
-@media (max-width: 1100px) {
-  .singleword {
-    width: 80%;
-  }
-  .singleword__word {
-    font-size: 2rem;
-  }
-  .singleword__desc {
-    font-size: 1.1rem;
-  }
+.sectiontitle {
+  color: var(--orange);
 }
 
 @media (max-width: 800px) {
-  .singleword {
-    width: 95%;
-  }
-  .singleword__word {
-    font-size: 1.8rem;
-  }
-  .singleword__desc {
-    font-size: 1rem;
+  .singlewordpage {
+    grid-template-columns: 2vw 95vw 2vw;
   }
 }

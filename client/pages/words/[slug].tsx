@@ -6,44 +6,52 @@ import classes from "../../styles/wordpage.module.css";
 const Word = (word: any) => {
   return (
     <Container>
-      <div className={classes.singleword}>
-        <div className={classes.singleword__word}>
-          <h1>{word.word[0].title}</h1>
-        </div>
-        <div className={classes.singleword__kind}>
-          <p>{word.word[0].kind}</p>
-        </div>
-        <ul className={classes.singleword__desc}>
-          {word.word[0].description.map((el: any) => (
-            <li key={el}>{el}</li>
-          ))}
-        </ul>
+      <div className={classes.singlewordpage}>
+        <div className={classes.singleword}>
+          <div className={classes.singleword__word}>
+            <h1>{word.word[0].title}</h1>
+          </div>
+          <div className={classes.singleword__kind}>
+            <p>{word.word[0].kind}</p>
+          </div>
+          <div className={classes.sectiontitle}>Definition</div>
+          <ul className={classes.singleword__desc}>
+            {word.word[0].description.map((el: any, i: number) => (
+              <li key={el}>
+                {i + 1}.{el}
+              </li>
+            ))}
+          </ul>
 
-        {word.word[0].synonyms.length >= 2 ? (
-          <ul className={classes.singleword__syn}>
-            {word.word[0].synonyms.map((el: any) => (
+          <div className={classes.sectiontitle}>Synonyms</div>
+          {word.word[0].synonyms.length >= 2 ? (
+            <ul className={classes.singleword__syn}>
+              {word.word[0].synonyms.map((el: any) => (
+                <li key={el}>{el}</li>
+              ))}
+            </ul>
+          ) : (
+            ""
+          )}
+
+          <div className={classes.sectiontitle}>Antonyms</div>
+          {word.word[0].antonyms.length >= 2 ? (
+            <ul className={classes.singleword__ant}>
+              {word.word[0].antonyms.map((el: any) => (
+                <li key={el}>{el}</li>
+              ))}
+            </ul>
+          ) : (
+            ""
+          )}
+
+          <div className={classes.sectiontitle}>Sentences</div>
+          <ul className={classes.singleword__sentences}>
+            {word.word[0].sentences.map((el: string) => (
               <li key={el}>{el}</li>
             ))}
           </ul>
-        ) : (
-          ""
-        )}
-
-        {word.word[0].antonyms.length >= 2 ? (
-          <ul className={classes.singleword__ant}>
-            {word.word[0].antonyms.map((el: any) => (
-              <li key={el}>{el}</li>
-            ))}
-          </ul>
-        ) : (
-          ""
-        )}
-
-        <ul className={classes.singleword__sentences}>
-          {word.word[0].sentences.map((el: string) => (
-            <li key={el}>{el}</li>
-          ))}
-        </ul>
+        </div>
       </div>
     </Container>
   );

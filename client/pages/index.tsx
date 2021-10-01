@@ -1,11 +1,18 @@
-import type { GetStaticProps, NextPage } from "next";
-import { useState, useEffect } from "react";
+import type { NextPage } from "next";
+import {
+  useState,
+  useEffect,
+  FormEventHandler,
+  FormHTMLAttributes,
+} from "react";
 import classes from "../styles/Home.module.css";
 import Container from "../components/Container";
 import NextLink from "next/link";
 import getConfig from "next/config";
+import { useRouter } from "next/router";
 
 const Home: NextPage = ({ words }: any) => {
+  const router = useRouter();
   const [searchParams, setSearchParams] = useState<string>("");
   const [results, setResults] = useState<any>([]);
 
@@ -16,6 +23,11 @@ const Home: NextPage = ({ words }: any) => {
       setResults(words.filter((el: any) => el.title.startsWith(searchParams)));
     }
   }, [searchParams]);
+
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push(`/words/${searchParams}`);
+  };
   return (
     <Container>
       <div className={classes.home}>
@@ -25,11 +37,14 @@ const Home: NextPage = ({ words }: any) => {
             <p>Where everything makes sense.</p>
           </div>
           <div className={classes.hero__input}>
-            <input
-              type="text"
-              placeholder="Search Words"
-              onChange={(e) => setSearchParams(e.target.value)}
-            />
+            <form onSubmit={submitHandler}>
+              <input
+                type="text"
+                placeholder="Search Words"
+                onChange={(e) => setSearchParams(e.target.value)}
+              />
+            </form>
+
             {results.length >= 1 ? (
               <ul className={classes.results}>
                 {results.map((res: any) => (
