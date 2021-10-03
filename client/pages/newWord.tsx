@@ -1,9 +1,10 @@
 import Container from "../components/Container";
 import classes from "../styles/newword.module.css";
 import type { NextPage } from "next";
-import { useState} from "react";
-import axios from "axios";
+import { useState } from "react";
 import getConfig from "next/config";
+import { createWord } from "../lib/dictionary";
+import { IWord } from "../types";
 
 const NewWord: NextPage = () => {
   const [word, setWord] = useState<string>("");
@@ -14,9 +15,9 @@ const NewWord: NextPage = () => {
   const [examples, setExamples] = useState<string>("");
   const [pass, setPass] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const {publicRuntimeConfig} = getConfig();
+  const { publicRuntimeConfig } = getConfig();
 
-  const submitHandler = async (e: any) => {
+  const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const allDescriptions = desc.split("--");
@@ -24,8 +25,8 @@ const NewWord: NextPage = () => {
       const allAntonyms = antonyms.split(", ");
       const allSentences = examples.split("--");
 
-      if(pass == publicRuntimeConfig.password){
-        await axios.post(`${publicRuntimeConfig.MY_URI}`, {
+      if (pass == publicRuntimeConfig.password) {
+        createWord({
           title: word,
           description: allDescriptions,
           kind: kind,
@@ -33,30 +34,24 @@ const NewWord: NextPage = () => {
           antonyms: allAntonyms,
           sentences: allSentences,
         });
-        
-       setMessage(`${word} is successfully added.`)
-      }else{
-        console.log("do you think you are smart?")
-          setWord("");
-          setDesc("");
-          setKind("");
-          setSynonyms("")
-          setAntonyms("");
-          setExamples("");
-
+        setMessage(`${word} is successfully added.`);
+      } else {
+        console.log("do you think you are smart?");
+        setWord("");
+        setDesc("");
+        setKind("");
+        setSynonyms("");
+        setAntonyms("");
+        setExamples("");
       }
-        } catch (error: any) {
+    } catch (error: any) {
       console.log("Error creating word", error.message);
     }
   };
 
   return (
     <Container>
-      <div className={classes.notify}>
-        {message ? 
-        <h2>{message}</h2> 
-        : ""}
-      </div>
+      <div className={classes.notify}>{message ? <h2>{message}</h2> : ""}</div>
       <form onSubmit={submitHandler} className={classes.form}>
         <div className={classes.inputcontainer}>
           <label htmlFor="word">Word</label>

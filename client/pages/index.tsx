@@ -1,20 +1,16 @@
 import type { NextPage } from "next";
-import {
-  useState,
-  useEffect,
-  FormEventHandler,
-  FormHTMLAttributes,
-} from "react";
+import { useState, useEffect } from "react";
 import classes from "../styles/Home.module.css";
 import Container from "../components/Container";
 import NextLink from "next/link";
 import getConfig from "next/config";
 import { useRouter } from "next/router";
+import { IWord } from "../types";
 
 const Home: NextPage = ({ words }: any) => {
   const router = useRouter();
   const [searchParams, setSearchParams] = useState<string>("");
-  const [results, setResults] = useState<any>([]);
+  const [results, setResults] = useState<IWord[] | null>([]);
 
   useEffect(() => {
     if (searchParams == "") {

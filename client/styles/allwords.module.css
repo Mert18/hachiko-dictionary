@@ -7,6 +7,7 @@
     ". head ."
     ". words ."
     ". . .";
+  background: var(--white);
 }
 
 .allwords h1 {

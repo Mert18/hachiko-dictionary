@@ -2,6 +2,7 @@ import Container from "../../components/Container";
 import getConfig from "next/config";
 import { GetStaticPaths, GetStaticProps } from "next";
 import classes from "../../styles/wordpage.module.css";
+import { getSingleWord } from "../../lib/dictionary";
 
 const Word = (word: any) => {
   return (
@@ -71,9 +72,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const { publicRuntimeConfig } = getConfig();
-  const res = await fetch(`${publicRuntimeConfig.GET_WORD}/${params.slug}`);
-  const word = await res.json();
+  const word = await getSingleWord(params.slug);
   return {
     props: {
       word,

@@ -8,7 +8,6 @@
   background: var(--white);
   min-height: 100vh;
 }
-
 .hero {
   grid-area: hero;
   background-image: url(../public/images/bgdic.svg);
@@ -27,6 +26,9 @@
   grid-area: title;
   text-align: center;
   color: var(--orange);
+}
+.hero__title h1 {
+  font-size: 2rem;
 }
 
 .hero__input {
@@ -110,6 +112,9 @@
   font-size: 1.4rem;
   height: max-content;
   font-weight: 300;
+}
+.wordoftheday h2 {
+  font-style: italic;
 }
 .wordoftheday p {
   font-size: 1.1rem;
