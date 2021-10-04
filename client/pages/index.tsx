@@ -41,9 +41,9 @@ const Home: NextPage = ({ words }: any) => {
               />
             </form>
 
-            {results.length >= 1 ? (
+            {results!.length >= 1 ? (
               <ul className={classes.results}>
-                {results.map((res: any) => (
+                {results!.map((res: any) => (
                   <li key={res._id} className={classes.result}>
                     <NextLink href={`/words/${res.title}`}>
                       <a>
