@@ -111,7 +111,6 @@
   position: relative;
   font-size: 1.4rem;
   height: max-content;
-  font-weight: 300;
 }
 .wordoftheday h2 {
   font-style: italic;
@@ -120,7 +119,7 @@
   font-size: 1.1rem;
 }
 .wordoftheday::before {
-  content: "Word Of The Day";
+  content: "Word Of The Month";
   position: absolute;
   top: -1rem;
   left: 4%;
@@ -143,7 +142,6 @@
   height: max-content;
   font-size: 1.2rem;
   position: relative;
-  font-weight: 300;
 }
 .hachikodictionary::before {
   content: "What is It?";

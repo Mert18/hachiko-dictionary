@@ -11,7 +11,6 @@ const Home: NextPage = ({ words }: any) => {
   const router = useRouter();
   const [searchParams, setSearchParams] = useState<string>("");
   const [results, setResults] = useState<IWord[] | null>([]);
-
   useEffect(() => {
     if (searchParams == "") {
       setResults([]);
@@ -65,10 +64,11 @@ const Home: NextPage = ({ words }: any) => {
         <section className={classes.homebelow}>
           <div className={classes.wordoftheday}>
             <h2>
-              Contend<span className={classes.actualkind}>verb</span>
+              {words[9].title}
+              <span className={classes.actualkind}>verb</span>
             </h2>
 
-            <p>Some definition of thecontend.</p>
+            <p>{words[9].description}</p>
           </div>
           <div className={classes.hachikodictionary}>
             <p>
