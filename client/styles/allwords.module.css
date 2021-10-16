@@ -12,6 +12,7 @@
 
 .allwords h1 {
   grid-area: head;
+  color: var(--orange);
 }
 .allwords__list {
   grid-area: words;
