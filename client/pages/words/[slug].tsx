@@ -23,7 +23,11 @@ const Word = (word: any) => {
             ))}
           </ul>
 
-          <div className={classes.sectiontitle}>Synonyms</div>
+          {word.word[0].synonyms.length >= 2 ? (
+            <div className={classes.sectiontitle}>Synonyms</div>
+          ) : (
+            ""
+          )}
           {word.word[0].synonyms.length >= 2 ? (
             <ul className={classes.singleword__syn}>
               {word.word[0].synonyms.map((el: any) => (
@@ -34,7 +38,11 @@ const Word = (word: any) => {
             ""
           )}
 
-          <div className={classes.sectiontitle}>Antonyms</div>
+          {word.word[0].antonyms.length >= 2 ? (
+            <div className={classes.sectiontitle}>Antonyms</div>
+          ) : (
+            ""
+          )}
           {word.word[0].antonyms.length >= 2 ? (
             <ul className={classes.singleword__ant}>
               {word.word[0].antonyms.map((el: any) => (

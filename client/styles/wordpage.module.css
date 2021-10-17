@@ -9,7 +9,6 @@
   color: var(--black);
   background: var(--white);
 }
-
 .singleword {
   grid-area: content;
 }
@@ -49,6 +48,9 @@
 .singleword__sentences {
   list-style: none;
   padding: 1rem 0rem;
+}
+.singleword__sentences li {
+  padding: 0.2rem 0rem;
 }
 
 .sectiontitle {
