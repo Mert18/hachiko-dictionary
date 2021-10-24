@@ -64,11 +64,11 @@ const Home: NextPage = ({ words }: any) => {
         <section className={classes.homebelow}>
           <div className={classes.wordoftheday}>
             <h2>
-              {words[9].title}
-              <span className={classes.actualkind}>verb</span>
+              {words[18].title}
+              <span className={classes.actualkind}>{words[18].kind}</span>
             </h2>
 
-            <p>{words[9].description}</p>
+            <p>{words[18].description}</p>
           </div>
           <div className={classes.hachikodictionary}>
             <p>

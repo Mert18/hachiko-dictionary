@@ -25,6 +25,7 @@
 .singleword__desc {
   padding: 1rem 0rem;
   list-style: none;
+  font-size: 1.4rem;
 }
 
 .singleword__syn {
@@ -34,6 +35,8 @@
 }
 .singleword__syn li {
   margin-right: 0.4rem;
+  font-weight: 600;
+  color: var(--green);
 }
 
 .singleword__ant {
@@ -43,6 +46,8 @@
 }
 .singleword__ant li {
   margin-right: 0.4rem;
+  font-weight: 600;
+  color: var(--red);
 }
 
 .singleword__sentences {
