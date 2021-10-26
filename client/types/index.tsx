@@ -10,3 +10,9 @@ export interface IWord {
   updated_at: Date;
   toremember?: string;
 }
+
+export interface IGame {
+  title: string;
+  description: string;
+  route: string;
+}
