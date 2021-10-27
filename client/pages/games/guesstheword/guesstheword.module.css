@@ -1,0 +1,15 @@
+.guesstheword {
+  display: grid;
+  grid-template-columns: 1fr 15fr 1fr;
+  grid-template-rows: 10vh auto 10vh;
+  grid-template-areas:
+    ". . ."
+    ". game ."
+    ". . .";
+}
+
+.guesstheword__game {
+  grid-area: game;
+  border: 1px solid var(--orange);
+  min-height: 70vh;
+}

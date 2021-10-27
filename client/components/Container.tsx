@@ -39,6 +39,9 @@ export default function Container(props: any) {
           <NextLink href="/words">
             <a>All Words</a>
           </NextLink>
+          <NextLink href="/games">
+            <a>Games</a>
+          </NextLink>
         </div>
       </nav>
       <main>{children}</main>

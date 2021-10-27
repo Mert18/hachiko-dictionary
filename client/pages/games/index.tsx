@@ -6,7 +6,9 @@ const Games = () => {
   return (
     <Container>
       <div className={classes.games}>
-        <GameList />
+        <section className={classes.games__games}>
+          <GameList />
+        </section>
       </div>
     </Container>
   );

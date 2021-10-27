@@ -17,3 +17,10 @@ export interface IGame {
   description: string;
   route: string;
 }
+
+export interface IQuestion {
+  question: string;
+  answers: string[];
+  correctAnswer: string;
+  score: number;
+}
