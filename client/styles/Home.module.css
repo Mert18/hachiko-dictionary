@@ -1,12 +1,13 @@
 .home {
   display: grid;
   grid-template-columns: 1fr 16fr 1fr;
-  grid-template-rows: 70vh auto;
+  grid-template-rows: 70vh auto auto;
   grid-template-areas:
     "hero hero hero"
-    ". . .";
+    "homebelow homebelow homebelow"
+    ". homegames .";
   background: var(--white);
-  min-height: 100vh;
+  min-height: 150vh;
 }
 .hero {
   grid-area: hero;
@@ -95,6 +96,7 @@
 }
 
 .homebelow {
+  grid-area: homebelow;
   display: grid;
   grid-template-columns: 4vw 40vw 10vw 30vw 4vw;
   grid-template-rows: 7vh auto 7vh;
@@ -102,7 +104,7 @@
     ". . . . ."
     ". wordoftheday . hachikodictionary ."
     ". . . . .";
-  height: 70vh;
+  min-height: 70vh;
   gap: 30px;
 }
 .wordoftheday {
@@ -157,6 +159,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.homegames {
+  grid-area: homegames;
+}
+
 .externallink {
   text-decoration: underline;
   text-decoration-color: var(--orange);
@@ -190,6 +197,15 @@
 }
 
 @media (max-width: 800px) {
+  .wordoftheday {
+    font-size: 0.8rem;
+  }
+  .wordoftheday p {
+    font-size: 0.7rem;
+  }
+  .hachikodictionary {
+    font-size: 0.8rem;
+  }
   .hero__input {
     width: 85%;
   }

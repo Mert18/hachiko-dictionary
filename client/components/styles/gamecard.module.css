@@ -1,0 +1,27 @@
+.gamelist {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gamecard {
+  padding: 1.5rem;
+  line-height: 1.9rem;
+  margin: 1rem;
+  border: 1px solid var(--orange);
+}
+.gamecard h2 {
+  color: var(--orange);
+}
+
+.gamecard a {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.gamecard a:hover {
+  background-color: var(--red);
+}

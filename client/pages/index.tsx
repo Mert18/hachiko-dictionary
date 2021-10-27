@@ -6,6 +6,7 @@ import NextLink from "next/link";
 import getConfig from "next/config";
 import { useRouter } from "next/router";
 import { IWord } from "../types";
+import GameList from "../components/GameList";
 
 const Home: NextPage = ({ words }: any) => {
   const router = useRouter();
@@ -95,6 +96,10 @@ const Home: NextPage = ({ words }: any) => {
               .
             </p>
           </div>
+        </section>
+
+        <section className={classes.homegames}>
+          <GameList />
         </section>
       </div>
     </Container>

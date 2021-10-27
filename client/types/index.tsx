@@ -12,6 +12,7 @@ export interface IWord {
 }
 
 export interface IGame {
+  id: number;
   title: string;
   description: string;
   route: string;
