@@ -1,23 +1,33 @@
 import classes from "./styles/questioncard.module.css";
-import { IQuestion } from "../types";
+import { IQuestion, IAnswerObject } from "../types";
 import { useState } from "react";
 
 const QuestionCard = ({
   question,
-  answers,
-  correctAnswer,
-  score,
+  callback,
+  userAnswer,
+  questionNr,
+  totalQuestions,
+  incorrectAnswers,
 }: IQuestion) => {
-  const myanswers = [...answers, correctAnswer];
-  const shuffled = myanswers.sort(() => 0.5 - Math.random());
+  const shuffled = [question, ...incorrectAnswers].sort(
+    () => 0.5 - Math.random()
+  );
+  const [answers, setAnswers] = useState(shuffled);
 
-  const [realAnswers, setRealAnswers] = useState(shuffled);
+  console.log(answers);
   return (
     <div className={classes.questioncard}>
-      <div className={classes.questioncard__question}>{question}</div>
+      <div className={classes.questioncard__question}>
+        {question.description.map((el: any) => (
+          <p key={el}>{el}</p>
+        ))}
+      </div>
       <div className={classes.questionbuttons}>
-        {realAnswers.map((answer: any) => (
-          <button key={answer}></button>
+        {answers.map((ans: any) => (
+          <button onClick={callback} key={ans.title}>
+            {ans.title}
+          </button>
         ))}
       </div>
     </div>

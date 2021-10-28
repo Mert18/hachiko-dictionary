@@ -18,9 +18,18 @@ export interface IGame {
   route: string;
 }
 
-export interface IQuestion {
+export interface IAnswerObject {
   question: string;
-  answers: string[];
+  answer: string;
+  correct: boolean;
   correctAnswer: string;
-  score: number;
+}
+
+export interface IQuestion {
+  question: any;
+  callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  userAnswer: IAnswerObject | undefined;
+  questionNr: number;
+  totalQuestions: number;
+  incorrectAnswers: any;
 }

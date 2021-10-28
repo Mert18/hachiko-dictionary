@@ -6,6 +6,7 @@
     ". . ."
     ". game ."
     ". . .";
+  font-family: "Press Start 2P", cursive;
 }
 
 .guesstheword__game {
@@ -27,19 +28,16 @@
 }
 
 .guesstheword__game__menu__options button {
-  padding: 0.5rem 0.9rem;
+  font-family: "Press Start 2P", cursive;
+  padding: 0.8rem 0.9rem;
   font-size: 1.1rem;
   color: var(--white);
   background-color: var(--orange);
-  border: none;
-  border-left: 4px solid var(--red);
-  border-bottom: 4px solid var(--red);
   outline: none;
   margin: 0.3rem;
 }
 
 .guesstheword__game__menu__options button:hover {
-  border-left: 2px solid var(--red);
-  border-bottom: 2px solid var(--red);
   cursor: pointer;
+  background-color: var(--red);
 }
