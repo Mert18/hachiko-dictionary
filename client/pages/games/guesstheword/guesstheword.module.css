@@ -13,3 +13,33 @@
   border: 1px solid var(--orange);
   min-height: 70vh;
 }
+
+.guesstheword__game__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.guesstheword__game__menu__desc h1 {
+  color: var(--orange);
+}
+
+.guesstheword__game__menu__options button {
+  padding: 0.5rem 0.9rem;
+  font-size: 1.1rem;
+  color: var(--white);
+  background-color: var(--orange);
+  border: none;
+  border-left: 4px solid var(--red);
+  border-bottom: 4px solid var(--red);
+  outline: none;
+  margin: 0.3rem;
+}
+
+.guesstheword__game__menu__options button:hover {
+  border-left: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+  cursor: pointer;
+}

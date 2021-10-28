@@ -15,7 +15,18 @@ const GuessTheWord = ({ words }: any) => {
   return (
     <Container>
       <div className={classes.guesstheword}>
-        <div className={classes.guesstheword__game}>Game Component</div>
+        <div className={classes.guesstheword__game}>
+          <div className={classes.guesstheword__game__menu}>
+            <div className={classes.guesstheword__game__menu__desc}>
+              <h1>Guess The Word</h1>
+              <p>Devise the word from given description.</p>
+            </div>
+            <div className={classes.guesstheword__game__menu__options}>
+              <button>History</button>
+              <button>New Game</button>
+            </div>
+          </div>
+        </div>
       </div>
     </Container>
   );
