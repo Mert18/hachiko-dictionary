@@ -6,7 +6,7 @@ const QuestionCard = ({ question, correctAnswer, incorrectAnswers }: any) => {
 
   useEffect(() => {
     answers.sort(() => 0.5 - Math.random());
-  }, []);
+  }, [answers]);
   return (
     <div className={classes.questioncard}>
       <div className={classes.questioncard__question}>
@@ -14,7 +14,7 @@ const QuestionCard = ({ question, correctAnswer, incorrectAnswers }: any) => {
       </div>
       <div className={classes.questioncard__answers}>
         {answers.map((ans: any) => (
-          <button>{ans.title}</button>
+          <button key={ans.title}>{ans.title}</button>
         ))}
       </div>
     </div>

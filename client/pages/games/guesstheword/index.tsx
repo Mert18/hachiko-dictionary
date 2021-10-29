@@ -1,6 +1,6 @@
 import Container from "../../../components/Container";
 import classes from "./guesstheword.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GetStaticProps } from "next";
 import { getAllWords } from "../../../lib/dictionary";
 import QuestionCard from "../../../components/QuestionCard";
@@ -11,21 +11,23 @@ const GuessTheWord = ({ words }: any) => {
   const [gameState, setGameState] = useState<string>("menu");
   const [incorrectAnswers, setIncorrectAnswers] = useState<any>([]);
   const [maxQuestion, setMaxQuestion] = useState<number>(10);
+  const [gameOver, setGameOver] = useState<boolean>(true);
 
   const startGame = () => {
-    let newwords = words;
-    setQuestions(words.sort(() => 0.5 - Math.random()).slice(0, 10));
-    setIncorrectAnswers(newwords.sort(() => 0.5 - Math.random()).slice(0, 3));
+    setGameOver(false);
     setGameState("game");
+    setQuestionNr(questionNr + 1);
+    setQuestions(words.sort(() => 0.5 - Math.random()).slice(0, 10));
+    setIncorrectAnswers(words.sort(() => 0.5 - Math.random()).slice(0, 3));
   };
 
   const nextQuestion = () => {
-    if (questionNr === maxQuestion) {
+    if (questionNr == maxQuestion) {
       setGameState("end");
+      setGameOver(true);
     } else {
-      let newwords = words;
-      setIncorrectAnswers(newwords.sort(() => 0.5 - Math.random()).slice(0, 3));
       setQuestionNr(questionNr + 1);
+      setIncorrectAnswers(words.sort(() => 0.5 - Math.random()).slice(0, 3));
     }
   };
 
@@ -33,7 +35,7 @@ const GuessTheWord = ({ words }: any) => {
     <Container>
       <div className={classes.guesstheword}>
         <div className={classes.guesstheword__game}>
-          {gameState === "menu" && (
+          {gameState === "menu" && gameOver ? (
             <div className={classes.guesstheword__game__menu}>
               <div className={classes.guesstheword__game__menu__desc}>
                 <h1>Guess The Word</h1>
@@ -44,15 +46,14 @@ const GuessTheWord = ({ words }: any) => {
                 <button onClick={startGame}>New Game</button>
               </div>
             </div>
-          )}
-
-          {gameState === "game" && (
+          ) : gameState === "game" && !gameOver ? (
             <div className={classes.guesstheword__game__game}>
               <div className={classes.guesstheword__game__game__card}>
                 <QuestionCard
                   question={questions[questionNr]}
                   correctAnswer={questions[questionNr]}
                   incorrectAnswers={incorrectAnswers}
+                  key={questionNr}
                 />
               </div>
               <div className={classes.guesstheword__game__game__bottom}>
@@ -64,11 +65,9 @@ const GuessTheWord = ({ words }: any) => {
                 </button>
               </div>
             </div>
-          )}
-
-          {gameState === "end" && (
+          ) : gameState === "end" && gameOver ? (
             <div className={classes.guesstheword__game__end}>Hey mr Rager!</div>
-          )}
+          ) : null}
         </div>
       </div>
     </Container>
