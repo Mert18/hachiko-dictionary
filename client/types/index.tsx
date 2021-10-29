@@ -32,4 +32,5 @@ export interface IQuestion {
   questionNr: number;
   totalQuestions: number;
   incorrectAnswers: any;
+  words: any;
 }
