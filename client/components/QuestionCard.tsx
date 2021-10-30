@@ -19,7 +19,7 @@ const QuestionCard = ({
       </div>
       <div className={classes.questioncard__answers}>
         {answers.map((ans: any) => (
-          <div>
+          <div key={ans.title}>
             <button
               style={
                 userAnswer?.correctAnswer === ans.title
@@ -27,7 +27,6 @@ const QuestionCard = ({
                   : { background: `gray` }
               }
               onClick={callback}
-              key={ans.title}
             >
               {ans.title}
             </button>

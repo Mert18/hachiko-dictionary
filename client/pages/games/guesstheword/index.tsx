@@ -14,13 +14,15 @@ const GuessTheWord = ({ words }: any) => {
   const [gameOver, setGameOver] = useState<boolean>(true);
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<any>([]);
+  const [myWords, setMyWords] = useState<any>(words);
 
   const startGame = () => {
     setGameOver(false);
     setGameState("game");
     setQuestionNr(questionNr + 1);
     setQuestions(words.sort(() => 0.5 - Math.random()).slice(0, 10));
-    setIncorrectAnswers(words.sort(() => 0.5 - Math.random()).slice(0, 3));
+    setMyWords(words.filter((el: any) => questions.indexOf(el) < 0));
+    setIncorrectAnswers(myWords.sort(() => 0.5 - Math.random()).slice(0, 3));
     setUserAnswers([]);
   };
 
@@ -30,13 +32,12 @@ const GuessTheWord = ({ words }: any) => {
       setGameOver(true);
     } else {
       setQuestionNr(questionNr + 1);
-      setIncorrectAnswers(words.sort(() => 0.5 - Math.random()).slice(0, 3));
+      setIncorrectAnswers(myWords.sort(() => 0.5 - Math.random()).slice(0, 3));
     }
   };
 
   const checkAnswer = (e: any) => {
     if (!gameOver) {
-      console.log(e);
       const answer = e.target.childNodes[0].data;
       const correct = questions[questionNr].title === answer;
       if (correct) {
@@ -53,6 +54,10 @@ const GuessTheWord = ({ words }: any) => {
       setUserAnswers((prev: any) => [...prev, answerObject]);
     }
   };
+
+  useEffect(() => {
+    setMyWords(words.filter((el: any) => questions.indexOf(el) < 0));
+  }, [questions]);
 
   return (
     <Container>
