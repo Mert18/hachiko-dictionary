@@ -12,6 +12,8 @@ const GuessTheWord = ({ words }: any) => {
   const [incorrectAnswers, setIncorrectAnswers] = useState<any>([]);
   const [maxQuestion, setMaxQuestion] = useState<number>(10);
   const [gameOver, setGameOver] = useState<boolean>(true);
+  const [score, setScore] = useState<number>(0);
+  const [userAnswers, setUserAnswers] = useState<any>([]);
 
   const startGame = () => {
     setGameOver(false);
@@ -19,15 +21,36 @@ const GuessTheWord = ({ words }: any) => {
     setQuestionNr(questionNr + 1);
     setQuestions(words.sort(() => 0.5 - Math.random()).slice(0, 10));
     setIncorrectAnswers(words.sort(() => 0.5 - Math.random()).slice(0, 3));
+    setUserAnswers([]);
   };
 
   const nextQuestion = () => {
-    if (questionNr == maxQuestion) {
+    if (questionNr === maxQuestion - 1) {
       setGameState("end");
       setGameOver(true);
     } else {
       setQuestionNr(questionNr + 1);
       setIncorrectAnswers(words.sort(() => 0.5 - Math.random()).slice(0, 3));
+    }
+  };
+
+  const checkAnswer = (e: any) => {
+    if (!gameOver) {
+      console.log(e);
+      const answer = e.target.childNodes[0].data;
+      const correct = questions[questionNr].title === answer;
+      if (correct) {
+        setScore((prev) => prev + 1);
+      }
+
+      const answerObject = {
+        question: questions[questionNr].description,
+        answer,
+        correct,
+        correctAnswer: questions[questionNr].title,
+      };
+
+      setUserAnswers((prev: any) => [...prev, answerObject]);
     }
   };
 
@@ -48,12 +71,18 @@ const GuessTheWord = ({ words }: any) => {
             </div>
           ) : gameState === "game" && !gameOver ? (
             <div className={classes.guesstheword__game__game}>
+              <div className={classes.guesstheword__game__game__top}>
+                {score}
+                {questionNr}
+              </div>
               <div className={classes.guesstheword__game__game__card}>
                 <QuestionCard
                   question={questions[questionNr]}
                   correctAnswer={questions[questionNr]}
                   incorrectAnswers={incorrectAnswers}
+                  userAnswer={userAnswers ? userAnswers[questionNr] : undefined}
                   key={questionNr}
+                  callback={checkAnswer}
                 />
               </div>
               <div className={classes.guesstheword__game__game__bottom}>

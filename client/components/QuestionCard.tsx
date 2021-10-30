@@ -1,12 +1,17 @@
 import classes from "./styles/questioncard.module.css";
 import { useState, useEffect } from "react";
 
-const QuestionCard = ({ question, correctAnswer, incorrectAnswers }: any) => {
-  const [answers, setAnswers] = useState([correctAnswer, ...incorrectAnswers]);
+const QuestionCard = ({
+  question,
+  correctAnswer,
+  incorrectAnswers,
+  callback,
+  userAnswer,
+}: any) => {
+  const [answers, setAnswers] = useState(
+    [correctAnswer, ...incorrectAnswers].sort(() => 0.5 - Math.random())
+  );
 
-  useEffect(() => {
-    answers.sort(() => 0.5 - Math.random());
-  }, [answers]);
   return (
     <div className={classes.questioncard}>
       <div className={classes.questioncard__question}>
@@ -14,7 +19,19 @@ const QuestionCard = ({ question, correctAnswer, incorrectAnswers }: any) => {
       </div>
       <div className={classes.questioncard__answers}>
         {answers.map((ans: any) => (
-          <button key={ans.title}>{ans.title}</button>
+          <div>
+            <button
+              style={
+                userAnswer?.correctAnswer === ans.title
+                  ? { background: `green` }
+                  : { background: `gray` }
+              }
+              onClick={callback}
+              key={ans.title}
+            >
+              {ans.title}
+            </button>
+          </div>
         ))}
       </div>
     </div>
