@@ -1,2 +1,34 @@
+.questioncard {
+  padding: 1rem;
+}
 
+.questioncard__question {
+  font-size: 0.7rem;
+  padding: 2rem;
+}
 
+.questioncard__answers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.questioncard__answers div {
+  margin: 0.4rem;
+}
+.questioncard__answers div button {
+  padding: 0.8rem 1.6rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+.questioncard__answers div button:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.messageguess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}

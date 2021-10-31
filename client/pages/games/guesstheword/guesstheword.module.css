@@ -35,9 +35,38 @@
   background-color: var(--orange);
   outline: none;
   margin: 0.3rem;
+  border: none;
 }
 
 .guesstheword__game__menu__options button:hover {
   cursor: pointer;
   background-color: var(--red);
+}
+
+.guesstheword__game__game {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.guesstheword__game__game__top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.guesstheword__game__game__bottom button {
+  padding: 0.6rem 0.8rem;
+  background: var(--orange);
+  color: var(--white);
+  font-family: "Press Start 2P", cursive;
+  border: 4px solid transparent;
+}
+
+.guesstheword__game__game__bottom button:hover {
+  background-color: var(--red);
+  cursor: pointer;
 }

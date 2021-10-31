@@ -15,6 +15,8 @@ const GuessTheWord = ({ words }: any) => {
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<any>([]);
   const [myWords, setMyWords] = useState<any>(words);
+  const [disabled, setDisabled] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
 
   const startGame = () => {
     setGameOver(false);
@@ -33,6 +35,8 @@ const GuessTheWord = ({ words }: any) => {
     } else {
       setQuestionNr(questionNr + 1);
       setIncorrectAnswers(myWords.sort(() => 0.5 - Math.random()).slice(0, 3));
+      setDisabled(false);
+      setMessage("");
     }
   };
 
@@ -42,7 +46,11 @@ const GuessTheWord = ({ words }: any) => {
       const correct = questions[questionNr].title === answer;
       if (correct) {
         setScore((prev) => prev + 1);
+        setMessage("Correct! :)");
+      } else {
+        setMessage("Incorrect :(");
       }
+      setDisabled(true);
 
       const answerObject = {
         question: questions[questionNr].description,
@@ -77,8 +85,14 @@ const GuessTheWord = ({ words }: any) => {
           ) : gameState === "game" && !gameOver ? (
             <div className={classes.guesstheword__game__game}>
               <div className={classes.guesstheword__game__game__top}>
-                {score}
-                {questionNr}
+                <div className={classes.guesstheword__game__game__top__score}>
+                  <h3>Score: {score}</h3>
+                </div>
+                <div className={classes.guesstheword__game__game__top__qnr}>
+                  <h3>
+                    {questionNr} / {maxQuestion}
+                  </h3>
+                </div>
               </div>
               <div className={classes.guesstheword__game__game__card}>
                 <QuestionCard
@@ -88,6 +102,8 @@ const GuessTheWord = ({ words }: any) => {
                   userAnswer={userAnswers ? userAnswers[questionNr] : undefined}
                   key={questionNr}
                   callback={checkAnswer}
+                  disabled={disabled}
+                  message={message}
                 />
               </div>
               <div className={classes.guesstheword__game__game__bottom}>
