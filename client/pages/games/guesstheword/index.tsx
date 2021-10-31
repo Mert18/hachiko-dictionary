@@ -4,13 +4,15 @@ import { useState, useEffect } from "react";
 import { GetStaticProps } from "next";
 import { getAllWords } from "../../../lib/dictionary";
 import QuestionCard from "../../../components/QuestionCard";
+import SummaryWordCard from "../../../components/SummaryWordCard";
+import Link from "next/link";
 
 const GuessTheWord = ({ words }: any) => {
   const [questionNr, setQuestionNr] = useState<number>(0);
   const [questions, setQuestions] = useState<any>([]);
   const [gameState, setGameState] = useState<string>("menu");
   const [incorrectAnswers, setIncorrectAnswers] = useState<any>([]);
-  const [maxQuestion, setMaxQuestion] = useState<number>(10);
+  const [maxQuestion, setMaxQuestion] = useState<number>(11);
   const [gameOver, setGameOver] = useState<boolean>(true);
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<any>([]);
@@ -22,7 +24,7 @@ const GuessTheWord = ({ words }: any) => {
     setGameOver(false);
     setGameState("game");
     setQuestionNr(questionNr + 1);
-    setQuestions(words.sort(() => 0.5 - Math.random()).slice(0, 10));
+    setQuestions(words.sort(() => 0.5 - Math.random()).slice(0, 11));
     setMyWords(words.filter((el: any) => questions.indexOf(el) < 0));
     setIncorrectAnswers(myWords.sort(() => 0.5 - Math.random()).slice(0, 3));
     setUserAnswers([]);
@@ -66,7 +68,6 @@ const GuessTheWord = ({ words }: any) => {
   useEffect(() => {
     setMyWords(words.filter((el: any) => questions.indexOf(el) < 0));
   }, [questions]);
-
   return (
     <Container>
       <div className={classes.guesstheword}>
@@ -90,7 +91,7 @@ const GuessTheWord = ({ words }: any) => {
                 </div>
                 <div className={classes.guesstheword__game__game__top__qnr}>
                   <h3>
-                    {questionNr} / {maxQuestion}
+                    {questionNr} / {maxQuestion - 1}
                   </h3>
                 </div>
               </div>
@@ -116,7 +117,29 @@ const GuessTheWord = ({ words }: any) => {
               </div>
             </div>
           ) : gameState === "end" && gameOver ? (
-            <div className={classes.guesstheword__game__end}>Hey mr Rager!</div>
+            <div className={classes.guesstheword__game__end}>
+              <div className={classes.guesstheword__game__end__stats}>
+                <p>You got {score} point(s) out of 10.</p>
+              </div>
+              <ul className={classes.guesstheword__game__end__answers}>
+                {userAnswers.map((answer: any) => (
+                  <li key={answer.correctAnswer}>
+                    <SummaryWordCard answer={answer} key={answer.answer} />
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <Link href="guesstheword">
+                  <a
+                    onClick={() => {
+                      window.location.href = "/games/guesstheword";
+                    }}
+                  >
+                    Play Again
+                  </a>
+                </Link>
+              </div>
+            </div>
           ) : null}
         </div>
       </div>
