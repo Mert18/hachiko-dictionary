@@ -6,8 +6,16 @@
     ". . ."
     ". games ."
     ". . .";
+
+  background-color: var(--white);
 }
 
 .games__games {
   grid-area: games;
+}
+
+.sectionhead {
+  color: var(--orange);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
 }

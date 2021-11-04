@@ -1,19 +1,20 @@
 import classes from "./styles/footer.module.css";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className={classes.footer}>
-      <p>
-        Made with love by{" "}
+      <div>
         <a
-          className={classes.externallink}
-          href="https://github.com/Mert18"
           target="_blank"
+          href="https://github.com/Mert18/hachiko-dictionary"
           rel="noreferrer"
         >
-          Mert Uyğur
+          <div className={classes.githubwrapper}>
+            <Image src="/images/ghub.svg" layout="fill" objectFit="contain" />
+          </div>
         </a>
-      </p>
+      </div>
     </footer>
   );
 }

@@ -7,7 +7,12 @@ const Games = () => {
     <Container>
       <div className={classes.games}>
         <section className={classes.games__games}>
-          <GameList />
+          <div className={classes.sectionhead}>
+            <h2>Games</h2>
+          </div>
+          <div className={classes.gamelistwrapper}>
+            <GameList />
+          </div>
         </section>
       </div>
     </Container>

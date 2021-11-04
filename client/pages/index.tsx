@@ -99,7 +99,12 @@ const Home: NextPage = ({ words }: any) => {
         </section>
 
         <section className={classes.homegames}>
-          <GameList />
+          <div className={classes.sectionhead}>
+            <h2>Games</h2>
+          </div>
+          <div className={classes.gamelistwrapper}>
+            <GameList />
+          </div>
         </section>
       </div>
     </Container>

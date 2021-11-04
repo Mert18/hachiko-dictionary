@@ -164,6 +164,12 @@
   grid-area: homegames;
 }
 
+.sectionhead {
+  color: var(--orange);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
 .externallink {
   text-decoration: underline;
   text-decoration-color: var(--orange);
