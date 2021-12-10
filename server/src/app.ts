@@ -21,6 +21,15 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
   next();
 });
 
+/*
+
+function isAccessGranted (req, res, next) {
+  // Here your authorization logic (jwt, OAuth, custom connection logic...)
+  if (!isGranted) return res.status(401).end()
+  next()
+}
+*/
+
 app.use("/api/dictionary", wordRoutes);
 
 const host = "0.0.0.0";
