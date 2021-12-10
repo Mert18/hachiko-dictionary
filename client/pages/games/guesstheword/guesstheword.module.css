@@ -1,6 +1,6 @@
 .guesstheword {
   display: grid;
-  grid-template-columns: 1fr 15fr 1fr;
+  grid-template-columns: 1fr 18fr 1fr;
   grid-template-rows: 10vh auto 10vh;
   grid-template-areas:
     ". . ."
@@ -13,6 +13,7 @@
   grid-area: game;
   border: 1px solid var(--orange);
   min-height: 70vh;
+  padding: 0.9rem;
 }
 
 .guesstheword__game__menu {
@@ -82,4 +83,23 @@
 .guesstheword__game__end__answers {
   list-style: none;
   padding: 0;
+}
+
+@media (max-width: 800px) {
+  .guesstheword {
+    grid-template-areas:
+      ". . ."
+      "game game game"
+      ". . .";
+  }
+  .guesstheword__game {
+    border: none;
+  }
+  .guesstheword__game__game__top {
+    font-size: 0.8rem;
+    letter-spacing: -2px;
+  }
+  .guesstheword__game__game__bottom button {
+    padding: 0.3rem 0.6rem;
+  }
 }

@@ -58,3 +58,9 @@
   font-size: 0.8rem;
   line-height: 18px;
 }
+
+@media (max-width: 800px) {
+  .questioncard__answers div button {
+    padding: 0.4rem 0.8rem;
+  }
+}
