@@ -37,7 +37,7 @@ export default function Container(props: any) {
             <a>Home</a>
           </NextLink>
           <NextLink href="/words">
-            <a>All Words</a>
+            <a>Words</a>
           </NextLink>
           <NextLink href="/games">
             <a>Games</a>
