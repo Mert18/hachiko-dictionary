@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 import Word from "../db/models/word";
 import { IWord } from "../types";
+import connectDB from "../db/mongoose";
 
 export const createWord: RequestHandler = async (req, res) => {
   try {
@@ -25,6 +26,15 @@ export const getWord: RequestHandler = async (req, res) => {
   try {
     let id = req.params.id;
     const word = await Word.find({ title: id });
+    res.json(word);
+  } catch (error: any) {
+    res.status(404).send(error.message);
+  }
+};
+
+export const getWordRandom: RequestHandler = async (req, res) => {
+  try {
+    const word = await Word.aggregate([{ $sample: { size: 1 } }]);
     res.json(word);
   } catch (error: any) {
     res.status(404).send(error.message);

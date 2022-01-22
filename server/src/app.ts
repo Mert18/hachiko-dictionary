@@ -1,5 +1,4 @@
 import express, { Request, Response, NextFunction } from "express";
-import { createServer } from "http";
 import config from "config";
 import { version } from "../package.json";
 import connectDB from "./db/mongoose";
