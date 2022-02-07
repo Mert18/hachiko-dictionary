@@ -75,7 +75,7 @@ const Home: NextPage = ({ words }: any) => {
             <p>
               <span className={classes.brandname}>Hachiko Dictionary</span> is
               more a learning project than an actual dictionary. Most of the
-              words are taken from reliable sources like{" "}
+              words are taken from reliable sources such as{" "}
               <a
                 className={classes.externallink}
                 href="https://www.merriam-webster.com"
