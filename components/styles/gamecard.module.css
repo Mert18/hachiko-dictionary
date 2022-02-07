@@ -3,6 +3,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 3rem;
 }
 
 .gamecard {
@@ -10,6 +11,7 @@
   line-height: 1.9rem;
   margin: 1rem;
   border: 1px solid var(--orange);
+  margin-top: 3rem;
 }
 .gamecard h2 {
   color: var(--orange);

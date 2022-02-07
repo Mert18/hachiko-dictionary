@@ -1,7 +1,7 @@
 .games {
   display: grid;
   grid-template-columns: 1fr 14fr 1fr;
-  grid-template-rows: 10vh auto 10vh;
+  grid-template-rows: 20vh auto 10vh;
   grid-template-areas:
     ". . ."
     ". games ."

@@ -1,4 +1,4 @@
-import Container from "../../../components/Container";
+import Container from "../../../components/Layout/Container";
 import classes from "./guesstheword.module.css";
 import { useState, useEffect } from "react";
 import { GetStaticProps } from "next";

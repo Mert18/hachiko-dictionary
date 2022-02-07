@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import NextLink from "next/link";
-import classes from "./styles/container.module.css";
-
+import classes from "../styles/container.module.css";
+import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Container(props: any) {
@@ -31,19 +30,8 @@ export default function Container(props: any) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
       </Head>
-      <nav className={classes.nav}>
-        <div className={classes.navroutes}>
-          <NextLink href="/">
-            <a>Home</a>
-          </NextLink>
-          <NextLink href="/words">
-            <a>Words</a>
-          </NextLink>
-          <NextLink href="/games">
-            <a>Games</a>
-          </NextLink>
-        </div>
-      </nav>
+      
+      <Header />
       <main>{children}</main>
       <Footer />
     </>

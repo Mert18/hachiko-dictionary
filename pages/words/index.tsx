@@ -1,4 +1,4 @@
-import Container from "../../components/Container";
+import Container from "../../components/Layout/Container";
 import { useState } from "react";
 import { GetStaticProps } from "next";
 import WordCard from "../../components/WordCard";

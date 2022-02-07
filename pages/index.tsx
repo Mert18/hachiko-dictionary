@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
 import classes from "../styles/Home.module.css";
-import Container from "../components/Container";
+import Container from "../components/Layout/Container";
 import NextLink from "next/link";
 import getConfig from "next/config";
 import { useRouter } from "next/router";
@@ -30,7 +30,7 @@ const Home: NextPage = ({ words }: any) => {
         <section className={classes.hero}>
           <div className={classes.hero__title}>
             <h1>Hachiko Dictionary</h1>
-            <p>Where everything makes sense.</p>:
+            <p>Where everything makes sense.</p>
           </div>
           <div className={classes.hero__input}>
             <form onSubmit={submitHandler}>

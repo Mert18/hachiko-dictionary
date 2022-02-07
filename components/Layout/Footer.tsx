@@ -1,4 +1,4 @@
-import classes from "./styles/footer.module.css";
+import classes from "../styles/footer.module.css";
 import Image from "next/image";
 
 export default function Footer() {

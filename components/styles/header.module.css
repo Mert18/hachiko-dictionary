@@ -1,0 +1,33 @@
+.nav {
+  height: 15vh;
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin-bottom: -9rem;
+  margin-left: 4rem;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 0rem 1rem;
+  color: var(--orange);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.nav ul li a {
+  transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: var(--orange-burnt);
+  transition: all 0.3s ease;
+}

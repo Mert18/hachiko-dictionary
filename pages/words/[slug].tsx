@@ -1,4 +1,4 @@
-import Container from "../../components/Container";
+import Container from "../../components/Layout/Container";
 import { GetStaticPaths, GetStaticProps } from "next";
 import classes from "../../styles/wordpage.module.css";
 import { getSingleWord, getAllWords } from "../../lib/dictionary";

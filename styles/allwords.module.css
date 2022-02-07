@@ -1,7 +1,7 @@
 .allwords {
   display: grid;
   grid-template-columns: 5vw auto 5vw;
-  grid-template-rows: 5vh 20vh auto 5vh;
+  grid-template-rows: 20vh 20vh auto 5vh;
   grid-template-areas:
     ". . ."
     ". head ."

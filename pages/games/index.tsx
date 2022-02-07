@@ -1,4 +1,4 @@
-import Container from "../../components/Container";
+import Container from "../../components/Layout/Container";
 import classes from "../../styles/games.module.css";
 import GameList from "../../components/GameList";
 

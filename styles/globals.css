@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap");
+/* font-family: 'Supermercado One', cursive; */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap");
 *,
 *::before,
 *::after {
@@ -13,6 +15,7 @@
 :root {
   --white: #fffcf7;
   --orange: #ab4b3e;
+  --orange-burnt: #7c251a;
   --black: #4a4453;
   --green: rgb(87, 153, 87);
   --red: rgb(194, 81, 81);
@@ -23,7 +26,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Noto Serif", serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 a {

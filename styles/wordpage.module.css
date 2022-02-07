@@ -1,6 +1,6 @@
 .singlewordpage {
   display: grid;
-  grid-template-columns: 6vw 60vw 6vw;
+  grid-template-columns: 4vw 60vw 4vw;
   grid-template-rows: 10vh auto 10vh;
   grid-template-areas:
     ". . ."
@@ -11,15 +11,22 @@
 }
 .singleword {
   grid-area: content;
+  font-size: 1.7rem;
 }
 
 .singleword__word {
-  color: var(--orange);
+  color: var(--black);
   font-size: 2rem;
+  margin-top: 4rem;
+  font-family: "Supermercado One", cursive;
 }
 
 .singleword__kind {
-  padding: 1rem 0rem;
+  padding: 0.4rem 0rem;
+  color: var(--orange);
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .singleword__desc {
