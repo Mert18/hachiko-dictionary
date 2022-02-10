@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap");
 /* font-family: 'Supermercado One', cursive; */
 
@@ -20,13 +18,16 @@
   --green: rgb(87, 153, 87);
   --red: rgb(194, 81, 81);
   --whiteorange: #fffafa;
+
+  --fail: #e17d6d;
+  --success: #78e16d;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Supermercado One", cursive;
 }
 
 a {

@@ -25,8 +25,8 @@ const QuestionCard = ({
         className={classes.messageguess}
         style={
           message === "Correct! :)"
-            ? { color: "var(--green)" }
-            : { color: "var(--red)" }
+            ? { color: "var(--success)" }
+            : { color: "var(--fail)" }
         }
       >
         {message}

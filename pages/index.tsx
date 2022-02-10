@@ -9,7 +9,7 @@ import { IWord } from "../types";
 import GameList from "../components/GameList";
 
 const Home: NextPage = ({ words }: any) => {
-  const router = useRouter();
+   const router = useRouter();
   const [searchParams, setSearchParams] = useState<string>("");
   const [results, setResults] = useState<IWord[] | null>([]);
   useEffect(() => {
