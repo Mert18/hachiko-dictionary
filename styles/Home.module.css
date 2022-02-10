@@ -124,7 +124,7 @@
     ". . . . ."
     ". wordoftheday . hachikodictionary ."
     ". . . . .";
-  min-height: 70vh;
+  min-height: 30vh;
   gap: 30px;
 }
 .wordoftheday {
@@ -139,7 +139,7 @@
   font-style: italic;
 }
 .wordoftheday p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 .wordoftheday::before {
   content: "Word Of The Month";
@@ -182,13 +182,11 @@
 
 .homegames {
   grid-area: homegames;
-  margin-top: 4rem;
 }
 
 .sectionhead {
   color: var(--orange);
   font-size: 1rem;
-  margin-bottom: 2rem;
 }
 
 .externallink {
@@ -254,6 +252,7 @@
   }
   .homebelow {
     grid-template-columns: 1vw 80vw 1vw;
+    grid-template-rows: 10vh auto auto 0vh;
     grid-template-areas:
       ". . ."
       ". wordoftheday ."

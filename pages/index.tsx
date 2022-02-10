@@ -9,7 +9,7 @@ import { IWord } from "../types";
 import GameList from "../components/GameList";
 
 const Home: NextPage = ({ words }: any) => {
-   const router = useRouter();
+  const router = useRouter();
   const [searchParams, setSearchParams] = useState<string>("");
   const [results, setResults] = useState<IWord[] | null>([]);
   useEffect(() => {
@@ -65,11 +65,11 @@ const Home: NextPage = ({ words }: any) => {
         <section className={classes.homebelow}>
           <div className={classes.wordoftheday}>
             <h2>
-              {words[18].title}
-              <span className={classes.actualkind}>{words[18].kind}</span>
+              {words[14].title}
+              <span className={classes.actualkind}>{words[14].kind}</span>
             </h2>
 
-            <p>{words[18].description}</p>
+            <p>{words[14].description}</p>
           </div>
           <div className={classes.hachikodictionary}>
             <p>
