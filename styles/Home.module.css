@@ -11,9 +11,10 @@
 }
 .hero {
   grid-area: hero;
-  background-image: url(../public/images/bgdic.svg);
+  background-image: url(../public/images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: -30px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 20vh auto auto;
