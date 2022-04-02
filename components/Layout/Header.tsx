@@ -16,11 +16,6 @@ export default function Header() {
               <a>Words</a>
             </Link>
           </li>
-          <li>
-            <Link href="/games">
-              <a>Games</a>
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>

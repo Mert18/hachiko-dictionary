@@ -1,0 +1,17 @@
+.info {
+  grid-area: info;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.brandname{
+  color: var(--orange)
+}
+
+.externallink{
+  color: var(--orange-burnt);
+  font-weight: 600;
+}
+

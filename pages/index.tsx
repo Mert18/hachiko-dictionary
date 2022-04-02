@@ -1,111 +1,19 @@
 import type { NextPage } from "next";
-import { useState, useEffect } from "react";
 import classes from "../styles/Home.module.css";
 import Container from "../components/Layout/Container";
-import NextLink from "next/link";
 import getConfig from "next/config";
-import { useRouter } from "next/router";
-import { IWord } from "../types";
-import GameList from "../components/GameList";
+import Hero from "../components/Home/Hero";
+import Info from "../components/Home/Info";
+import Games from "../components/Home/Games";
+
 
 const Home: NextPage = ({ words }: any) => {
-  const router = useRouter();
-  const [searchParams, setSearchParams] = useState<string>("");
-  const [results, setResults] = useState<IWord[] | null>([]);
-  useEffect(() => {
-    if (searchParams == "") {
-      setResults([]);
-    } else {
-      setResults(words.filter((el: any) => el.title.startsWith(searchParams)));
-    }
-  }, [searchParams]);
-
-  const submitHandler = (e: React.FormEvent) => {
-    e.preventDefault();
-    router.push(`/words/${searchParams}`);
-  };
   return (
     <Container>
       <div className={classes.home}>
-        <section className={classes.hero}>
-          <div className={classes.hero__title}>
-            <h1>Hachiko Dictionary</h1>
-            <p>Where everything makes sense.</p>
-          </div>
-          <div className={classes.hero__input}>
-            <form onSubmit={submitHandler}>
-              <input
-                type="text"
-                placeholder="Search Words"
-                onChange={(e) => setSearchParams(e.target.value)}
-              />
-            </form>
-
-            {results!.length >= 1 ? (
-              <ul className={classes.results}>
-                {results!.map((res: any) => (
-                  <li key={res._id} className={classes.result}>
-                    <NextLink href={`/words/${res.title}`}>
-                      <a>
-                        <p className={classes.actualword}>
-                          {res.title}
-                          <span className={classes.actualkind}>{res.kind}</span>
-                        </p>
-                      </a>
-                    </NextLink>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              ""
-            )}
-          </div>
-        </section>
-
-        <section className={classes.homebelow}>
-          <div className={classes.wordoftheday}>
-            <h2>
-              {words[14].title}
-              <span className={classes.actualkind}>{words[14].kind}</span>
-            </h2>
-
-            <p>{words[14].description}</p>
-          </div>
-          <div className={classes.hachikodictionary}>
-            <p>
-              <span className={classes.brandname}>Hachiko Dictionary</span> is
-              more a learning project than an actual dictionary. Most of the
-              words are taken from reliable sources such as{" "}
-              <a
-                className={classes.externallink}
-                href="https://www.merriam-webster.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Merriam Webster
-              </a>{" "}
-              and{" "}
-              <a
-                className={classes.externallink}
-                href="https://dictionary.cambridge.org"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Cambridge Dictionary
-              </a>
-              .
-            </p>
-          </div>
-        </section>
-
-        <section className={classes.homegames}>
-          <div className={classes.sectionhead}>
-            <h2>Games</h2>
-          </div>
-          <div className={classes.gamelistwrapper}>
-            <GameList />
-          </div>
-        </section>
+        <Hero words={words} />
+        <Info word={words[23]} />
+        <Games />
       </div>
     </Container>
   );
