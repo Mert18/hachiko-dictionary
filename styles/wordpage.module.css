@@ -11,34 +11,48 @@
 }
 .singleword {
   grid-area: content;
-  font-size: 1.7rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(10vh, max-content) 7vh minmax(10vh, max-content) 10vh 10vh minmax(
+      15vh,
+      max-content
+    );
+  grid-template-areas:
+    "word"
+    "kind"
+    "desc"
+    "syn"
+    "ant"
+    "sent";
 }
 
 .singleword__word {
   color: var(--black);
-  font-size: 2rem;
-  margin-top: 4rem;
-  font-family: "Supermercado One", cursive;
+  font-size: 2.5rem;
+  grid-area: word;
 }
 
 .singleword__kind {
-  padding: 0.4rem 0rem;
   color: var(--orange);
-  margin-bottom: 2rem;
   font-size: 1.4rem;
   font-weight: 700;
+  grid-area: kind;
 }
 
-.singleword__desc {
-  padding: 1rem 0rem;
+
+.singleword__desc ul{
   list-style: none;
-  font-size: 1.4rem;
+  grid-area: desc;
+  padding: 1rem 0rem;
+  font-size: 1.5rem;
 }
 
-.singleword__syn {
-  padding: 1rem 0rem;
+.singleword__syn ul{
   list-style: none;
   display: flex;
+  grid-area: syn;
+  font-size: 1.5rem;
+  padding: 1rem 0rem;
 }
 .singleword__syn li {
   margin-right: 0.4rem;
@@ -46,10 +60,12 @@
   color: var(--green);
 }
 
-.singleword__ant {
-  padding: 1rem 0rem;
+.singleword__ant ul{
   list-style: none;
   display: flex;
+  grid-area: ant;
+  font-size: 1.5rem;
+  padding: 1rem 0rem;
 }
 .singleword__ant li {
   margin-right: 0.4rem;
@@ -57,8 +73,10 @@
   color: var(--red);
 }
 
-.singleword__sentences {
+.singleword__sentences ul{
   list-style: none;
+  grid-area: sent;
+  font-size: 1.5rem;
   padding: 1rem 0rem;
 }
 .singleword__sentences li {
@@ -70,7 +88,28 @@
 }
 
 @media (max-width: 800px) {
-  .singlewordpage {
-    grid-template-columns: 2vw 95vw 2vw;
+  .singleword__word {
+    font-size: 2.2rem;
   }
+
+  .singleword__kind{
+    font-size: 1rem;
+  }
+
+  .singleword__desc ul{
+    font-size: 1.3rem;
+  }
+
+  .singleword__syn ul{
+    font-size: 1.3rem;
+  }
+
+  .singleword__ant ul{
+    font-size: 1.3rem;
+  }
+
+  .singleword__sentences ul{
+    font-size: 1.3rem;
+  }
+
 }

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import classes from "../styles/container.module.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
