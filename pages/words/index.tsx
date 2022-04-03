@@ -50,6 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       words,
     },
+    revalidate: 3600,
   };
 };
 

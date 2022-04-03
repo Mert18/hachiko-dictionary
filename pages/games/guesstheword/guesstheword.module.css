@@ -6,10 +6,11 @@
     ". . ."
     ". game ."
     ". . .";
+  background: var(--white);
 }
 .guesstheword__game {
   grid-area: game;
-  min-height: 70vh;
+  min-height: 50vh;
   padding: 0.9rem;
 }
 
@@ -23,11 +24,11 @@
 }
 .guesstheword__game__menu__desc h1 {
   color: var(--orange);
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .guesstheword__game__menu__desc p {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .guesstheword__game__menu__options button {
@@ -61,15 +62,13 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .guesstheword__game__game__bottom button {
   padding: 0.6rem 0.8rem;
   background: var(--orange);
   color: var(--white);
-  border: 4px solid transparent;
-  font-size: 1.5rem;
   font-family: "Supermercado One", cursive;
 }
 

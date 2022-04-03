@@ -39,18 +39,6 @@ const Word = (word: any) => {
             ""
           )}
 
-          {word.word[0].antonyms.length >= 2 ? (
-            <section className={classes.singleword__ant}>
-              <div className={classes.sectiontitle}>Antonyms</div>
-              <ul>
-                {word.word[0].antonyms.map((el: any) => (
-                  <li key={el}>{el}</li>
-                ))}
-              </ul>
-            </section>
-          ) : (
-            ""
-          )}
 
           <section className={classes.singleword__sentences}>
             <div className={classes.sectiontitle}>Sentences</div>
