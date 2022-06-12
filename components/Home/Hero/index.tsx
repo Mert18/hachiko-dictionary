@@ -25,7 +25,7 @@ const Hero = ({ words }: any) => {
     <section className={classes.hero}>
       <div className={classes.hero__title}>
         <h1>Hachiko Dictionary</h1>
-        <p>Where everything makes sense.</p>
+        <p>Where everything makes sense</p>
       </div>
       <div className={classes.hero__input}>
         <form onSubmit={submitHandler}>
