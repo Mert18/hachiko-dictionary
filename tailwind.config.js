@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ubuntu: ["--font-ubuntu", "sans-serif"],
+      },
       colors: {
         primary: {
           DEFAULT: "#679186",
@@ -22,7 +28,11 @@ module.exports = {
           300: "#BB9FA7",
           400: "#EADEE1",
         },
-        soft: "#F9F9F9",
+        white: "#F9F9F9",
+        black: {
+          DEFAULT: "#333333",
+          darker: "#000000",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
