@@ -1,7 +1,9 @@
 import React from "react";
 
-const MainLayout = () => {
-  return <div>MainLayout</div>;
+const MainLayout = ({ children }) => {
+  return (
+    <div className="flex flex-col md:flex-row md:h-[100vh]">{children}</div>
+  );
 };
 
 export default MainLayout;

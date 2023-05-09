@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import axios from "axios";
 
 const RegisterForm = () => {
+  const [loading, setLoading] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -13,6 +15,7 @@ const RegisterForm = () => {
       confirmPassword: "",
     },
     onSubmit: async (values) => {
+      setLoading(true);
       await axios
         .post(
           `${process.env.NEXT_PUBLIC_BACKEND_URI}/api/v1/auth/register`,
@@ -31,6 +34,7 @@ const RegisterForm = () => {
           }
           return resp.data;
         });
+      setLoading(false);
       console.log("Values: " + values);
     },
   });
@@ -98,7 +102,7 @@ const RegisterForm = () => {
         className="my-2 bg-white text-primary px-4 py-2 rounded-md transition hover:translate-x-2 text-sm"
         type="submit"
       >
-        Register
+        {!loading && "Register"}
       </button>
     </form>
   );

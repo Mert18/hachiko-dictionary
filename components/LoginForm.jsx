@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: async (values) => {
+      setLoading(true);
       alert(JSON.stringify(values, null, 2));
+      setLoading(false);
     },
   });
 
