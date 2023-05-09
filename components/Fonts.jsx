@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { Ubuntu } from "@next/font/google";
+import { Ubuntu } from "next/font/google";
 import { useServerInsertedHTML } from "next/navigation";
 
 const ubuntu = Ubuntu({

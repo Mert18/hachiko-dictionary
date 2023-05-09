@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const RegisterForm = () => {
   const formik = useFormik({
@@ -10,12 +13,32 @@ const RegisterForm = () => {
       confirmPassword: "",
     },
     onSubmit: async (values) => {
-      alert(JSON.stringify(values, null, 2));
+      await axios
+        .post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URI}/api/v1/auth/register`,
+          values
+        )
+        .then((resp) => {
+          console.log("Response", resp);
+          const { accessToken, refreshToken } = resp.data.data;
+          const bearer = `Bearer ${accessToken}`;
+          axios.defaults.headers.Authorization = bearer;
+          localStorage.setItem("refreshToken", refreshToken);
+          localStorage.setItem("accessToken", accessToken);
+          notify(resp.data.message);
+          if (resp.status === 200) {
+            window.location.href = "/dashboard";
+          }
+          return resp.data;
+        });
+      console.log("Values: " + values);
     },
   });
 
+  const notify = (message) => toast(message);
+
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} className="my-10">
       <div className="flex flex-col w-full">
         <label className="py-1 text-sm text-white" htmlFor="username">
           Username
@@ -30,7 +53,7 @@ const RegisterForm = () => {
         />
       </div>
       <div className="flex flex-col w-full">
-        <label className="py-1 text-sm text-white" htmlFor="password">
+        <label className="py-1 text-sm text-white" htmlFor="email">
           Email Address
         </label>
         <input
@@ -72,7 +95,7 @@ const RegisterForm = () => {
       </div>
 
       <button
-        className="my-2 bg-white text-primary px-4 py-2 rounded-md transition hover:text-black text-sm"
+        className="my-2 bg-white text-primary px-4 py-2 rounded-md transition hover:translate-x-2 text-sm"
         type="submit"
       >
         Register

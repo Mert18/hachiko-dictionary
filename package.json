@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.4.1",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "axios-auth-refresh": "^3.3.6",
+    "dayjs": "^1.11.7",
     "formik": "^2.2.9",
+    "jwt-decode": "^3.1.2",
     "next": "13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-toastify": "^9.1.2",
     "tailwindcss": "3.3.2"
   }
 }

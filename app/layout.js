@@ -1,5 +1,8 @@
+"use client";
 import Fonts from "@/components/Fonts";
 import "./globals.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "Hachiko Dictionary",
@@ -10,7 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Fonts />
-      <body>{children}</body>
+
+      <body>
+        <ToastContainer />
+        {children}
+      </body>
     </html>
   );
 }
