@@ -33,7 +33,7 @@ const Confirm = () => {
   return (
     <div className="h-screen flex justify-center items-center">
       {message && <p>{message}</p>}
-      <Link className="text-primary" href="/dashboard">
+      <Link className="text-primary" href="/main">
         Click here to go to dashboard.
       </Link>
     </div>

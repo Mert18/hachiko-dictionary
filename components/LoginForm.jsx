@@ -2,11 +2,9 @@ import React, { useState, useContext } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useGlobalContext } from "@/app/Context/store";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
-  const context = useGlobalContext();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -35,6 +33,8 @@ const LoginForm = () => {
               role: res.data.data.role,
             })
           );
+
+          localStorage.setItem("difficultyData", "medium");
 
           if (res.status === 200) {
             window.location.href = "/main ";

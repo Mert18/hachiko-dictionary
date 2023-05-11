@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
-import WordBoxList from "@/components/WordBoxList";
 import PrimaryTabs from "@/components/PrimaryTabs";
 import SecondaryTabs from "@/components/SecondaryTabs";
+import WordHandler from "@/components/WordHandler";
+import { useGlobalContext } from "@/app/Context/store";
 
 const MainLayout = ({ children }) => {
+  const context = useGlobalContext();
+
   return (
     <div className="flex flex-col md:flex-row md:h-screen bg-white">
       <div className="md:flex-1 bg-white flex justify-center items-start pt-20">
@@ -20,8 +23,7 @@ const MainLayout = ({ children }) => {
           <SecondaryTabs />
         </div>
         <div className="p-4 flex-col justify-start items-center">
-          <WordHandler />
-          <WordBoxList />
+          <WordHandler difficulty={context.difficulty} />
         </div>
       </div>
     </div>

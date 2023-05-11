@@ -8,7 +8,7 @@ const WordAntonyms = ({ antonyms }) => {
       <ul className="flex flex-wrap">
         {antonyms?.map((antonym) => {
           return (
-            <li className="mr-3" key={antonym}>
+            <li className="mr-3 text-primary" key={antonym}>
               {antonym}
             </li>
           );

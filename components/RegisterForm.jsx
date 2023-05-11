@@ -21,25 +21,39 @@ const RegisterForm = () => {
           `${process.env.NEXT_PUBLIC_BACKEND_URI}/api/v1/auth/register`,
           values
         )
-        .then((resp) => {
-          console.log("Response", resp);
-          const { accessToken, refreshToken } = resp.data.data;
+        .then((res) => {
+          console.log("Response", res);
+          const { accessToken, refreshToken } = res.data.data;
           const bearer = `Bearer ${accessToken}`;
           axios.defaults.headers.Authorization = bearer;
           localStorage.setItem("refreshToken", refreshToken);
           localStorage.setItem("accessToken", accessToken);
-          notify(resp.data.message);
-          if (resp.status === 200) {
-            window.location.href = "/dashboard";
+
+          localStorage
+            .setItem(
+              "userData",
+              JSON.stringify({
+                accountId: res.data.data.accountId,
+                email: res.data.data.email,
+                username: res.data.data.username,
+                role: res.data.data.role,
+              })
+            )
+            .catch((err) => {
+              console.log("Register error.", err);
+            });
+
+          localStorage.setItem("difficultyData", "medium");
+
+          if (res.status === 200) {
+            window.location.href = "/main";
           }
-          return resp.data;
+          return res.data;
         });
       setLoading(false);
       console.log("Values: " + values);
     },
   });
-
-  const notify = (message) => toast(message);
 
   return (
     <form onSubmit={formik.handleSubmit} className="my-10">

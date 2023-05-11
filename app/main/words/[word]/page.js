@@ -10,7 +10,6 @@ const Word = ({ params }) => {
     await axiosInstance
       .get(`/api/v1/word/${wordId}`)
       .then((res) => {
-        console.log("single response: ", res);
         setWord(res.data.data);
       })
       .catch((err) => {
