@@ -8,7 +8,7 @@ const WordSynonyms = ({ synonyms }) => {
       <ul className="flex flex-wrap">
         {synonyms?.map((synonym) => {
           return (
-            <li className="mr-3" key={synonym}>
+            <li className="mr-3 text-primary" key={synonym}>
               {synonym}
             </li>
           );

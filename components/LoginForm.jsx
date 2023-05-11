@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useFormik } from "formik";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useGlobalContext } from "@/app/Context/store";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
+  const context = useGlobalContext();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -10,7 +14,36 @@ const LoginForm = () => {
     },
     onSubmit: async (values) => {
       setLoading(true);
-      alert(JSON.stringify(values, null, 2));
+      await axios
+        .post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URI}/api/v1/auth/login`,
+          values
+        )
+        .then((res) => {
+          const { accessToken, refreshToken } = res.data.data;
+          const bearer = `Bearer ${accessToken}`;
+          axios.defaults.headers.Authorization = bearer;
+          localStorage.setItem("refreshToken", refreshToken);
+          localStorage.setItem("accessToken", accessToken);
+          toast.success(res.data.message);
+          localStorage.setItem(
+            "userData",
+            JSON.stringify({
+              accountId: res.data.data.accountId,
+              email: res.data.data.email,
+              username: res.data.data.username,
+              role: res.data.data.role,
+            })
+          );
+
+          if (res.status === 200) {
+            window.location.href = "/main ";
+          }
+          return res.data;
+        })
+        .catch((err) => {
+          console.log("Login error.", err);
+        });
       setLoading(false);
     },
   });

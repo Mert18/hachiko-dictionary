@@ -8,7 +8,7 @@ const WordSentences = ({ sentences }) => {
       <ul className="flex flex-col">
         {sentences?.map((sentence) => {
           return (
-            <li className="py-2" key={sentence}>
+            <li className="py-2 text-primary" key={sentence}>
               {sentence}
             </li>
           );

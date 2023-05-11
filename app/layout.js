@@ -3,6 +3,7 @@ import Fonts from "@/components/Fonts";
 import "./globals.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GlobalContextProvider, UserProvider } from "@/app/Context/store";
 
 export const metadata = {
   title: "Hachiko Dictionary",
@@ -13,10 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Fonts />
-
       <body>
-        <ToastContainer />
-        {children}
+        <GlobalContextProvider>
+          <ToastContainer />
+          {children}
+        </GlobalContextProvider>
       </body>
     </html>
   );
