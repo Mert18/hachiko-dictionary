@@ -20,7 +20,7 @@ export const GlobalContextProvider = ({ children }) => {
 
     const difficultyData = localStorage.getItem("difficultyData");
     if (difficultyData) {
-      setDifficulty(JSON.parse(difficultyData));
+      setDifficulty(difficultyData);
     }
   }, []);
 
