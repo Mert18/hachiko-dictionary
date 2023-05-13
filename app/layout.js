@@ -1,14 +1,9 @@
 "use client";
 import Fonts from "@/components/Fonts";
 import "./globals.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { GlobalContextProvider, UserProvider } from "@/app/Context/store";
-
-export const metadata = {
-  title: "Hachiko Dictionary",
-  description: "Hachiko dictionary introduction page",
-};
+import { GlobalContextProvider } from "@/app/Context/store";
 
 export default function RootLayout({ children }) {
   return (
