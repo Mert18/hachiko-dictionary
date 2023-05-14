@@ -42,7 +42,7 @@ const LoginForm = () => {
           return res.data;
         })
         .catch((err) => {
-          console.log("Login error.", err);
+          toast.error(err?.response?.data?.message);
         });
       setLoading(false);
     },

@@ -1,10 +1,5 @@
+"use client";
 import React from "react";
-import "../globals.css";
-
-export const metadata = {
-  title: "Authentication",
-  description: "Authenticate yourself in hachiko dictionary.",
-};
 
 const AuthenticationLayout = ({ children }) => {
   return (

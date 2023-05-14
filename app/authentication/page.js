@@ -7,6 +7,10 @@ import React from "react";
 const Authentication = () => {
   return (
     <>
+      <div className="bg-white border-2 border-primary rounded-md text-primary p-4 absolute top-0 left-[50%] -translate-x-1/2 mt-5">
+        <p>Hachiko Dictionary</p>
+      </div>
+
       <div className="md:flex-1 bg-primary flex justify-center items-center">
         <div className="w-[50%]">
           <h1 className="text-center my-10 text-white font-bold text-4xl">

@@ -6,22 +6,18 @@ import WordAntonyms from "./WordAntonyms";
 import WordDescriptions from "./WordDescriptions";
 import WordSentences from "./WordSentences";
 
-const Word = (word) => {
+const Word = ({ word }) => {
   return (
     <div className="w-[90%]">
-      <WordTitle title={word.word.title} />
-      {word.word.descriptions?.length > 0 && (
-        <WordDescriptions descriptions={word.word.descriptions} />
+      <WordTitle title={word.title} />
+      {word.descriptions?.length > 0 && (
+        <WordDescriptions descriptions={word.descriptions} />
       )}
 
-      {word.word.synonyms?.length > 1 && (
-        <WordSynonyms synonyms={word.word.synonyms} />
-      )}
-      {word.word.antonyms?.length > 1 && (
-        <WordAntonyms antonyms={word.word.antonyms} />
-      )}
-      {word.word.sentences?.length > 1 && (
-        <WordSentences sentences={word.word.sentences} />
+      {word.synonyms?.length > 1 && <WordSynonyms synonyms={word.synonyms} />}
+      {word.antonyms?.length > 1 && <WordAntonyms antonyms={word.antonyms} />}
+      {word.sentences?.length > 1 && (
+        <WordSentences sentences={word.sentences} />
       )}
     </div>
   );

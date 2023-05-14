@@ -21,9 +21,9 @@ const QuoteHandler = ({ difficulty }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <p className="uppercase text-white text-sm font-semibold">
-        {quote.quote}
+        {quote?.quote}
       </p>
-      <p className="text-white">—{quote.author}</p>
+      <p className="text-white">—{quote?.author}</p>
     </div>
   );
 };
