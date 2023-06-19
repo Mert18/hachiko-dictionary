@@ -13,12 +13,9 @@ const Profile = () => {
     axiosInstance
       .get("/api/v1/quiz/my-quizzes")
       .then((res) => {
-        console.log("uiz info: ", res.data);
         setQuizInfo(res.data.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   useEffect(() => {

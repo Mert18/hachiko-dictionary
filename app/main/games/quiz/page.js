@@ -53,35 +53,22 @@ const Quiz = () => {
     await axiosInstance
       .get("/api/v1/quiz/generate/medium")
       .then((res) => {
-        console.log("fetched questions: ", res.data);
         setQuestions(res.data.data.questions);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
-  const handlePlayAgain = () => {
-    console.log("handle play again");
-  };
+  const handlePlayAgain = () => {};
 
   const handleCompleteQuiz = () => {
-    console.log(
-      "completing quiz: ",
-      correctAnswers.length,
-      incorrectAnswers.length
-    );
     axiosInstance
       .post("/api/v1/quiz/complete", {
         correctAnswers: correctAnswers.length,
         incorrectAnswers: incorrectAnswers.length,
         difficulty: "medium",
       })
-      .then((res) => {
-        console.log("res", res);
-      })
+      .then((res) => {})
       .catch((err) => {
-        console.log(err);
         toast.error(err?.response?.data?.message);
       });
   };

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Loader from "./Loader";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,6 @@ const RegisterForm = () => {
           values
         )
         .then((res) => {
-          console.log("Response", res);
           const { accessToken, refreshToken } = res.data.data;
           const bearer = `Bearer ${accessToken}`;
           axios.defaults.headers.Authorization = bearer;
@@ -39,19 +39,15 @@ const RegisterForm = () => {
                 role: res.data.data.role,
               })
             )
-            .catch((err) => {
-              console.log("Register error.", err);
-            });
+            .catch((err) => {});
 
           localStorage.setItem("difficultyData", "medium");
 
           if (res.status === 200) {
             window.location.href = "/main";
           }
-          return res.data;
         });
       setLoading(false);
-      console.log("Values: " + values);
     },
   });
 
@@ -116,7 +112,7 @@ const RegisterForm = () => {
         className="my-2 bg-white text-primary px-4 py-2 rounded-md transition hover:translate-x-2 text-sm"
         type="submit"
       >
-        {!loading && "Register"}
+        {loading ? <Loader /> : "Register"}
       </button>
     </form>
   );

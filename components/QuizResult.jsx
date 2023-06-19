@@ -2,7 +2,6 @@ import React from "react";
 import QuizResultAnswers from "./QuizResultAnswers";
 
 const QuizResult = ({ correctAnswers, incorrectAnswers, handlePlayAgain }) => {
-  console.log("incorrect answers: ", incorrectAnswers);
   return (
     <div className="p-4">
       <div className="text-primary flex flex-col justify-center items-center">

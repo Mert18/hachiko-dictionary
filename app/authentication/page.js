@@ -2,9 +2,14 @@
 
 import LoginForm from "@/components/LoginForm";
 import RegisterForm from "@/components/RegisterForm";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Authentication = () => {
+  useEffect(() => {
+    if (localStorage.getItem("accessToken")) {
+      window.location.href = "/main";
+    }
+  }, []);
   return (
     <>
       <div className="bg-white border-2 border-primary rounded-md text-primary p-4 absolute top-0 left-[50%] -translate-x-1/2 mt-5">

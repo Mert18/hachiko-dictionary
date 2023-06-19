@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Loader from "./Loader";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -82,7 +83,7 @@ const LoginForm = () => {
         className="my-2 bg-primary text-white px-4 py-2 rounded-md transition hover:translate-x-2 text-sm"
         type="submit"
       >
-        Login
+        {loading ? <Loader /> : "Login"}
       </button>
     </form>
   );

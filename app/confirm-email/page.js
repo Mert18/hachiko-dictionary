@@ -9,7 +9,6 @@ const Confirm = () => {
   const searchParams = useSearchParams();
 
   const confirmEmail = async (email, token) => {
-    console.log("inside confirm: ", email, token);
     await axios
       .post(
         `${process.env.NEXT_PUBLIC_BACKEND_URI}/api/v1/confirmation/confirm`,

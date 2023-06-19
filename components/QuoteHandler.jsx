@@ -7,12 +7,9 @@ const QuoteHandler = ({ difficulty }) => {
     await axiosInstance
       .get(`/api/v1/quote/one/${difficulty}`)
       .then((res) => {
-        console.log("responded: ", res.data);
         setQuote(res.data.data);
       })
-      .catch((err) => {
-        console.log("error: ", err);
-      });
+      .catch((err) => {});
   };
 
   useEffect(() => {

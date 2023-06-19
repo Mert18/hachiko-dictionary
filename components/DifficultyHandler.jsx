@@ -7,7 +7,6 @@ const DifficultyHandler = () => {
   const handleDifficulty = (newValue) => {
     setDifficulty(newValue);
     localStorage.setItem("difficultyData", JSON.stringify(newValue));
-    console.log("diff: ", difficulty);
   };
   return (
     <div>

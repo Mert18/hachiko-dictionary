@@ -10,13 +10,12 @@ const Main = ({ children }) => {
     await axiosInstance
       .get(`/api/v1/word/one/${difficulty}`)
       .then((res) => {
-        console.log("res: ", res.data.data);
-        router.push(`/main/words/${res.data.data.id}`);
-        return res.data.data;
+        if (res.data?.data?.id !== undefined) {
+          router.push(`/main/words/${res.data.data.id}`);
+          return res.data?.data;
+        }
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   useEffect(() => {

@@ -17,7 +17,6 @@ const Word = ({ params }) => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log("error getting word, ", err);
         setLoading(false);
       });
   };
