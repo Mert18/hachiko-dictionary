@@ -31,16 +31,16 @@ const Quiz = () => {
         ...current,
         {
           question: questions[currentIndex],
-          yourAnswer: choice,
-        },
+          yourAnswer: choice
+        }
       ]);
     } else {
       setIncorrectAnswers((current) => [
         ...current,
         {
           question: questions[currentIndex],
-          yourAnswer: choice,
-        },
+          yourAnswer: choice
+        }
       ]);
     }
     setCurrentIndex(currentIndex + 1);
@@ -55,26 +55,29 @@ const Quiz = () => {
       .then((res) => {
         setQuestions(res.data.data.questions);
       })
-      .catch((err) => {});
+      .catch((err) => {
+      });
   };
 
-  const handlePlayAgain = () => {};
+  const handlePlayAgain = () => {
+  };
 
   const handleCompleteQuiz = () => {
     axiosInstance
       .post("/api/v1/quiz/complete", {
         correctAnswers: correctAnswers.length,
         incorrectAnswers: incorrectAnswers.length,
-        difficulty: "medium",
+        difficulty: "medium"
       })
-      .then((res) => {})
+      .then((res) => {
+      })
       .catch((err) => {
         toast.error(err?.response?.data?.message);
       });
   };
 
   return (
-    <div className="flex flex-col justify-center items-center py-4 w-full">
+    <div className="flex flex-col justify-center items-center py-4 w-full h-full">
       <GameHeader title="Quiz" image="quiz" />
 
       {gameState === "menu" && <QuizMenu handleStartGame={handleStartGame} />}
