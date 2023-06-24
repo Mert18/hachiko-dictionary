@@ -19,18 +19,18 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#679186",
-          100: "#79A096",
-          200: "#8CADA5",
-          300: "#9FBBB4",
-          400: "#E7EFED",
+          DEFAULT: "#4D7E3E",
+          100: "#6BA45D",
+          200: "#8BC573",
+          300: "#AED18A",
+          400: "#D2EFA0",
         },
         secondary: {
-          DEFAULT: "#916772",
-          100: "#A07983",
-          200: "#AD8C95",
-          300: "#BB9FA7",
-          400: "#EADEE1",
+          DEFAULT: "#7E3E8A",
+          100: "#9D5B9D",
+          200: "#BB79BB",
+          300: "#D897D8",
+          400: "#F6B4F6",
         },
         white: "#F9F9F9",
         black: {

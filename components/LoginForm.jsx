@@ -3,13 +3,14 @@ import { useFormik } from "formik";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Loader from "./Loader";
+import Image from "next/image";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
+      password: ""
     },
     onSubmit: async (values) => {
       setLoading(true);
@@ -31,7 +32,7 @@ const LoginForm = () => {
               accountId: res.data.data.accountId,
               email: res.data.data.email,
               username: res.data.data.username,
-              role: res.data.data.role,
+              role: res.data.data.role
             })
           );
 
@@ -46,45 +47,46 @@ const LoginForm = () => {
           toast.error(err?.response?.data?.message);
         });
       setLoading(false);
-    },
+    }
   });
 
   return (
     <form onSubmit={formik.handleSubmit} className="my-10">
-      <div className="flex flex-col w-full">
-        <label className="py-1 text-sm text-primary" htmlFor="password">
-          Email Address
-        </label>
+      <div className="flex flex-col justify-center items-center my-3">
+        <div className={"flex justify-center items-center my-1"}>
+          <Image src={"/icons/mail.svg"} width={20} height={20} />
+        </div>
         <input
           id="email"
           name="email"
           type="email"
           onChange={formik.handleChange}
           value={formik.values.email}
-          className="px-4 py-2 text-primary bg-white rounded-md outline-none focus:ring-2 focus:ring-primary focus:border-none border border-black"
+          className="text-center text-sm px-2 py-1 text-primary bg-white outline-none focus:border-b-2 border-b border-primary"
         />
       </div>
 
-      <div className="flex flex-col w-full">
-        <label className="py-1 text-sm text-primary" htmlFor="password">
-          Password
-        </label>
+      <div className="flex flex-col justify-center itemes-center my-3">
+        <div className={"flex justify-center items-center my-1"}>
+          <Image src={"/icons/key.svg"} width={20} height={20} />
+        </div>
         <input
           id="password"
           name="password"
           type="password"
           onChange={formik.handleChange}
           value={formik.values.password}
-          className="px-4 py-2 text-primary bg-white rounded-md outline-none focus:ring-2 focus:ring-primary focus:border-none border border-black"
+          className="text-center text-sm px-2 py-1 text-primary bg-white outline-none focus:border-b-2 border-b border-primary"
         />
       </div>
-
-      <button
-        className="my-2 bg-primary text-white px-4 py-2 rounded-md transition hover:translate-x-2 text-sm"
-        type="submit"
-      >
-        {loading ? <Loader /> : "Login"}
-      </button>
+      <div className={"flex justify-center items-center"}>
+        <button
+          className="my-2 text-white px-3 py-2 transition hover:translate-x-2"
+          type="submit"
+        >
+          {loading ? <Loader /> : <Image src={"/icons/door_open.svg"} width={20} height={20} />}
+        </button>
+      </div>
     </form>
   );
 };
