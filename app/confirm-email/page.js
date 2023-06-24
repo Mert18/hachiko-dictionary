@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/image";
 
 const Confirm = () => {
   const [message, setMessage] = useState("");
@@ -14,7 +15,7 @@ const Confirm = () => {
         `${process.env.NEXT_PUBLIC_BACKEND_URI}/api/v1/confirmation/confirm`,
         {
           email,
-          token,
+          token
         }
       )
       .then((res) => {
@@ -30,11 +31,17 @@ const Confirm = () => {
     confirmEmail(email, token);
   }, []);
   return (
-    <div className="h-screen flex justify-center items-center">
-      {message && <p>{message}</p>}
-      <Link className="text-primary" href="/main">
-        Click here to go to dashboard.
-      </Link>
+    <div className="h-screen flex flex-col justify-evenly items-center">
+      <div>
+        <Image src={"/logo/logo-color.svg"} width={150} height={150} />
+      </div>
+      <div className={"flex flex-col justify-center items-center"}>
+        {message && <p className={"font-bold my-4"}>{message}</p>}
+        <Link className="text-primary" href="/main">
+          Click here to go to dashboard.
+        </Link>
+      </div>
+
     </div>
   );
 };
