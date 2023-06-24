@@ -7,3 +7,5 @@ Mastering new words can be challenging, but Hachiko Dictionary provides effectiv
 Application here: https://hachikodictionary.com
 
 Server resides here: [https://github.com/Mert18/hachiko-dictionary-server](https://github.com/Mert18/hachiko-dictionary-server)
+
+Please open issue if you notice any bug, or if you have any idea to implement in this project.
