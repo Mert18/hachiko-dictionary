@@ -60,6 +60,7 @@ const LoginForm = () => {
           id="email"
           name="email"
           type="email"
+          placeholder="email"
           onChange={formik.handleChange}
           value={formik.values.email}
           className="text-center text-sm px-2 py-1 text-primary bg-white outline-none focus:border-b-2 border-b border-primary"
@@ -74,6 +75,7 @@ const LoginForm = () => {
           id="password"
           name="password"
           type="password"
+          placeholder="password"
           onChange={formik.handleChange}
           value={formik.values.password}
           className="text-center text-sm px-2 py-1 text-primary bg-white outline-none focus:border-b-2 border-b border-primary"
