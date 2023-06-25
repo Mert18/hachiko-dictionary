@@ -7,7 +7,6 @@ import { useGlobalContext } from "@/app/Context/store";
 import DifficultyHandler from "@/components/DifficultyHandler";
 import QuoteHandler from "@/components/QuoteHandler";
 import Image from "next/image";
-import Tab from "@/components/Tab";
 import axiosInstance from "@/lib/axiosInstance";
 
 const MainLayout = ({ children }) => {
@@ -41,7 +40,7 @@ const MainLayout = ({ children }) => {
             </button>
           </div>
           <div className={"p-4 flex flex-col justify-center items-center w-full"}>
-            <Image src={"/logo/logo-no-background.svg"} width={100} height={100} />
+            <Image alt={"logo"} src={"/logo/logo-no-background.svg"} width={100} height={100} />
           </div>
           <div className="p-4">
             <p className="text-xs font-bold text-white">You</p>
@@ -54,9 +53,9 @@ const MainLayout = ({ children }) => {
           <div className="p-4">
             <WordHandler difficulty={context.difficulty} />
           </div>
-          <div className="p-4">
-            <DifficultyHandler />
-          </div>
+          {/*<div className="p-4">*/}
+          {/*  <DifficultyHandler />*/}
+          {/*</div>*/}
         </div>
         <div className="p-4">
           <div className="p-4">

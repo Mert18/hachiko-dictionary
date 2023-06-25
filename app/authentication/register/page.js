@@ -13,7 +13,7 @@ const Register = () => {
       <div className="flex flex-col justify-center items-center">
         {/* LOGO */}
         <div className={"my-5"}>
-          <Image src="/logo/logo-no-background.svg" width={150} height={150} />
+          <Image alt={"logo"} src="/logo/logo-no-background.svg" width={150} height={150} />
         </div>
 
         {/* FORM */}
@@ -25,7 +25,7 @@ const Register = () => {
             <p>Already have an account?</p>
             <hr />
             <div className={"flex justify-center items-center my-4"}>
-              <Image className={"p-1"} src="/icons/door_open.svg" width={30} height={30} />
+              <Image alt={"door"} className={"p-1"} src="/icons/door_open.svg" width={30} height={30} />
             </div>
           </Link>
         </div>

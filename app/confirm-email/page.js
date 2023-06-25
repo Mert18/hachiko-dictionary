@@ -33,7 +33,7 @@ const Confirm = () => {
   return (
     <div className="h-screen flex flex-col justify-evenly items-center">
       <div>
-        <Image src={"/logo/logo-color.svg"} width={150} height={150} />
+        <Image alt={"logo"} src={"/logo/logo-color.svg"} width={150} height={150} />
       </div>
       <div className={"flex flex-col justify-center items-center"}>
         {message && <p className={"font-bold my-4"}>{message}</p>}

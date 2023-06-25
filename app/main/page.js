@@ -2,6 +2,7 @@
 import axiosInstance from "@/lib/axiosInstance";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Main = ({ children }) => {
   const router = useRouter();
@@ -15,7 +16,9 @@ const Main = ({ children }) => {
           return res.data?.data;
         }
       })
-      .catch((err) => {});
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
   };
 
   useEffect(() => {

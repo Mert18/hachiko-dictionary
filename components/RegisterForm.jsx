@@ -58,7 +58,7 @@ const RegisterForm = () => {
     <form onSubmit={formik.handleSubmit} className="my-10">
       <div className="flex flex-col justify-center items-center my-3">
         <div className={"flex justify-center items-center my-1"}>
-          <Image src={"/icons/badge.svg"} width={20} height={20} />
+          <Image alt={"badge"} src={"/icons/badge.svg"} width={20} height={20} />
         </div>
         <input
           id="username"
@@ -71,7 +71,7 @@ const RegisterForm = () => {
       </div>
       <div className="flex flex-col justify-center items-center my-3">
         <div className={"flex justify-center items-center my-1"}>
-          <Image src={"/icons/mail.svg"} width={20} height={20} />
+          <Image alt={"mail"} src={"/icons/mail.svg"} width={20} height={20} />
         </div>
         <input
           id="email"
@@ -85,7 +85,7 @@ const RegisterForm = () => {
 
       <div className="flex flex-col justify-center items-center my-3">
         <div className={"flex justify-center items-center my-1"}>
-          <Image src={"/icons/key.svg"} width={20} height={20} />
+          <Image alt={"key"} src={"/icons/key.svg"} width={20} height={20} />
         </div>
         <input
           id="password"
@@ -98,7 +98,7 @@ const RegisterForm = () => {
       </div>
       <div className="flex flex-col justify-center items-center my-3">
         <div className={"flex justify-center items-center my-1"}>
-          <Image src={"/icons/key.svg"} width={20} height={20} />
+          <Image alt={"key"} src={"/icons/key.svg"} width={20} height={20} />
         </div>
         <input
           id="confirmPassword"
@@ -115,7 +115,7 @@ const RegisterForm = () => {
           className="my-2 text-white px-3 py-2 transition hover:translate-x-2"
           type="submit"
         >
-          {loading ? <Loader /> : <Image src={"/icons/group_add.svg"} width={20} height={20} />}
+          {loading ? <Loader /> : <Image alt={"user"} src={"/icons/group_add.svg"} width={20} height={20} />}
         </button>
       </div>
     </form>
