@@ -63,6 +63,7 @@ const RegisterForm = () => {
         <input
           id="username"
           name="username"
+          placeholder="username"
           type="text"
           onChange={formik.handleChange}
           value={formik.values.username}
@@ -77,6 +78,7 @@ const RegisterForm = () => {
           id="email"
           name="email"
           type="email"
+          placeholder="E-mail"
           onChange={formik.handleChange}
           value={formik.values.email}
           className="text-center text-sm px-2 py-1 text-primary bg-white outline-none focus:border-b-2 border-b border-primary"
@@ -90,6 +92,7 @@ const RegisterForm = () => {
         <input
           id="password"
           name="password"
+          placeholder="Password"
           type="password"
           onChange={formik.handleChange}
           value={formik.values.password}
@@ -103,6 +106,7 @@ const RegisterForm = () => {
         <input
           id="confirmPassword"
           name="confirmPassword"
+          placeholder="Confirm Password"
           type="password"
           onChange={formik.handleChange}
           value={formik.values.confirmPassword}
