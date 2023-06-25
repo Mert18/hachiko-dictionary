@@ -12,7 +12,7 @@ const DifficultyHandler = () => {
     <div>
       <button
         className={difficulty === "easy" ?
-          "bg-primary-400 px-4 py-2 rounded-md bg-white font-bold text-sm text-primary mr-2 transition hover:-translate-y-1" :
+          "bg-primary-400 px-4 py-2 rounded-md font-bold text-sm text-primary mr-2 transition hover:-translate-y-1" :
           "px-4 py-2 rounded-md bg-white font-bold text-sm text-primary mr-2 transition hover:-translate-y-1"}
         onClick={() => handleDifficulty("easy")}
       >
@@ -20,7 +20,7 @@ const DifficultyHandler = () => {
       </button>
       <button
         className={difficulty === "medium" ?
-          "bg-primary-400 px-4 py-2 rounded-md bg-white font-bold text-sm text-primary mr-2 transition hover:-translate-y-1" :
+          "bg-primary-400 px-4 py-2 rounded-md font-bold text-sm text-primary mr-2 transition hover:-translate-y-1" :
           "px-4 py-2 rounded-md bg-white font-bold text-sm text-primary mr-2 transition hover:-translate-y-1"
         }
         onClick={() => handleDifficulty("medium")}
@@ -29,7 +29,7 @@ const DifficultyHandler = () => {
       </button>
       <button
         className={difficulty === "hard" ?
-          "bg-primary-400 px-4 py-2 rounded-md bg-white font-bold text-sm text-primary transition hover:-translate-y-1" :
+          "bg-primary-400 px-4 py-2 rounded-md font-bold text-sm text-primary transition hover:-translate-y-1" :
           "px-4 py-2 rounded-md bg-white font-bold text-sm text-primary transition hover:-translate-y-1"
         }
         onClick={() => handleDifficulty("hard")}

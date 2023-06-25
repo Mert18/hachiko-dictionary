@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Hachiko Dictionary
 
-## Getting Started
+Hachiko Dictionary offers an immersive learning experience for expanding one's vocabulary.
 
-First, run the development server:
+Mastering new words can be challenging, but Hachiko Dictionary provides effective aids such as example sentences, videos, and interactive games to enhance memorization. This comprehensive approach sets Hachiko Dictionary apart!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Application here: https://hachikodictionary.com
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Server resides here: [https://github.com/Mert18/hachiko-dictionary-server](https://github.com/Mert18/hachiko-dictionary-server)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instructions to set up the development environment for frontend
+- Install Docker and ensure that `docker-compose version` returns a meaningful response. If not, install docker-compose seperately.
+- Download the backend `git clone https://github.com/Mert18/hachiko-dictionary-server.git`
+- In the project directory, run `docker-compose up`
+- Trace the logs and ensure that the application accepts requests on :8888 port.
+- Download the frontend: `git clone git@github.com:Mert18/hachiko-dictionary.git`
+- Switch to `develop` branch: `git checkout develop`
+- Fetch the latest version of the branch: `git pull`
+- Pick an issue to work on it (Let everyone know you are working on it by writing a comment under the issue.). Let's say the issue id is `52`
+- Create and checkout a branch from the develop branch: `git checkout -b 52-issue-description`
+- After finishing your work, send the changes:
+  ```
+    git add .
+    git commit -m "52: I made these changes etc."
+    git push -u origin 52-issue-description
+  ```
+- In the repository page https://github.com/Mert18/hachiko-dictionary you will see a notification to open a pull request. Open a pull request then, say what you have changed, and request to merge into !!! `develop` !!! branch.
+- That's it.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Please open issue if you notice any bug, or if you have any idea to implement in this project.
