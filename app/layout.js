@@ -8,13 +8,23 @@ import { GlobalContextProvider } from "@/app/Context/store";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Fonts />
-      <body>
-        <GlobalContextProvider>
-          <ToastContainer />
-          {children}
-        </GlobalContextProvider>
-      </body>
+    <Fonts />
+    <body>
+    <GlobalContextProvider>
+      <ToastContainer />
+      {children}
+    </GlobalContextProvider>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6GK0N7RG5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E6GK0N7RG5');
+    </script>
+    </body>
+    <!-- Google tag (gtag.js) -->
+
     </html>
   );
 }
