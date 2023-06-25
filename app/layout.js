@@ -5,27 +5,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalContextProvider } from "@/app/Context/store";
 import Script from "next/script";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
     <Fonts />
     <body>
-    <Script src="https://www.googletagmanager.com/gtag/js?id=G-E6GK0N7RG5" />
-    <Script id="google-analytics">
-      {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-          gtag('config', 'G-E6GK0N7RG5');
-        `
-      }
-    </Script>
     <GlobalContextProvider>
       <ToastContainer />
       {children}
     </GlobalContextProvider>
-
     </body>
     </html>
   );
