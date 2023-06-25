@@ -53,9 +53,9 @@ const MainLayout = ({ children }) => {
           <div className="p-4">
             <WordHandler difficulty={context.difficulty} />
           </div>
-          <div className="p-4">
-            <DifficultyHandler />
-          </div>
+          {/*<div className="p-4">*/}
+          {/*  <DifficultyHandler />*/}
+          {/*</div>*/}
         </div>
         <div className="p-4">
           <div className="p-4">
