@@ -8,7 +8,7 @@ const Tab = ({ name, path, icon }) => {
       <Link href={path}>
         <Image
           src={`/icons/${icon}.svg`}
-          alt={name}
+          alt={name || "icon"}
           width={48}
           height={48}
           className="p-2"
