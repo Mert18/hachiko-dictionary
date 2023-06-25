@@ -5,8 +5,7 @@ const DifficultyHandler = () => {
   const { difficulty, setDifficulty } = useGlobalContext();
 
   const handleDifficulty = (newValue) => {
-    setDifficulty(newValue);
-    localStorage.setItem("difficultyData", JSON.stringify(newValue));
+    setDifficulty("medium");
   };
   return (
     <div>

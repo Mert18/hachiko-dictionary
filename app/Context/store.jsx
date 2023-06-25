@@ -3,9 +3,10 @@ import { createContext, useState, useEffect, useContext } from "react";
 
 const GlobalContext = createContext({
   user: {},
-  setUser: () => {},
+  setUser: () => {
+  },
   difficulty: "",
-  setDifficulty: () => "",
+  setDifficulty: () => ""
 });
 
 export const GlobalContextProvider = ({ children }) => {
@@ -17,11 +18,6 @@ export const GlobalContextProvider = ({ children }) => {
     if (userData) {
       setUser(JSON.parse(userData));
     }
-
-    const difficultyData = localStorage.getItem("difficultyData");
-    if (difficultyData) {
-      setDifficulty(difficultyData);
-    }
   }, []);
 
   return (
@@ -30,7 +26,7 @@ export const GlobalContextProvider = ({ children }) => {
         user,
         setUser,
         difficulty,
-        setDifficulty,
+        setDifficulty
       }}
     >
       {children}
