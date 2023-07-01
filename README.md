@@ -1,5 +1,7 @@
 ## Hachiko Dictionary
 
+## !!Hosting is paused temporarily because of the increasing maintenance costs.!!
+
 Hachiko Dictionary offers an immersive learning experience for expanding one's vocabulary.
 
 Mastering new words can be challenging, but Hachiko Dictionary provides effective aids such as example sentences, videos, and interactive games to enhance memorization. This comprehensive approach sets Hachiko Dictionary apart!
