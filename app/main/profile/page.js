@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "@/app/Context/store";
 import axiosInstance from "@/lib/axiosInstance";
-import ProfileIntroduction from "@/components/ProfileIntroduction";
-import ProfileStats from "@/components/ProfileStats";
+import ProfileIntroduction from "@/components/profile/ProfileIntroduction";
+import ProfileStats from "@/components/profile/ProfileStats";
+import withAuth from "@/lib/withAuth";
 
 const Profile = () => {
   const { user } = useGlobalContext();
@@ -30,4 +31,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default withAuth(Profile);

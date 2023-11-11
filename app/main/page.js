@@ -3,6 +3,7 @@ import axiosInstance from "@/lib/axiosInstance";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import withAuth from "@/lib/withAuth";
 
 const Main = ({ children }) => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const Main = ({ children }) => {
         }
       })
       .catch((err) => {
+        console.log("error!: ", err);
         toast.error(err.response.data.message);
       });
   };
@@ -28,4 +30,4 @@ const Main = ({ children }) => {
   return children;
 };
 
-export default Main;
+export default withAuth(Main);
