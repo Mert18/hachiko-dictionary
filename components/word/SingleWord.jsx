@@ -5,10 +5,14 @@ import WordSynonyms from "./WordSynonyms";
 import WordAntonyms from "./WordAntonyms";
 import WordDescriptions from "./WordDescriptions";
 import WordSentences from "./WordSentences";
+import WordHandler from "./WordHandler";
+import { useGlobalContext } from "@/app/Context/store";
 
 const Word = ({ word }) => {
+  const context = useGlobalContext();
+
   return (
-    <div className="w-[90%]">
+    <div className="w-[90%] relative">
       <WordTitle title={word.title} />
       {word.descriptions?.length > 0 && (
         <WordDescriptions descriptions={word.descriptions} />
@@ -19,6 +23,9 @@ const Word = ({ word }) => {
       {word.sentences?.length > 1 && (
         <WordSentences sentences={word.sentences} />
       )}
+      <div className="p-4 absolute top-0 right-0">
+        <WordHandler difficulty={context.difficulty} />
+      </div>
     </div>
   );
 };

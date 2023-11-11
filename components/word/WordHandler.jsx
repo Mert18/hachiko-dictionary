@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import Loader from "@/components/Loader";
+import Loader from "@/components/common/Loader";
 
 const WordHandler = ({ difficulty }) => {
   const [loading, setLoading] = useState();
@@ -29,19 +29,21 @@ const WordHandler = ({ difficulty }) => {
   };
 
   return (
-    <div className="flex justify-start items-center w-max" onClick={handleNextWord}>
-      <div
-        className="hover:cursor-pointer hover:translate-x-1 transition p-2 bg-white rounded-md"
-
-      >
-        {loading ? <Loader /> :
+    <div
+      className="flex justify-start items-center w-max"
+      onClick={handleNextWord}
+    >
+      <div className="hover:cursor-pointer hover:translate-x-1 transition p-1 bg-white rounded-md">
+        {loading ? (
+          <Loader />
+        ) : (
           <Image
             src="/icons/play.svg"
             width={28}
             height={28}
             alt="triangle facing right"
           />
-        }
+        )}
       </div>
     </div>
   );
