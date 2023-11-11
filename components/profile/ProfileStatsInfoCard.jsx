@@ -6,7 +6,7 @@ const ProfileStatsInfoCard = ({ title, value }) => {
       <div className="w-32 h-32 rounded-md bg-primary text-white m-2 flex justify-center items-center">
         <p className="text-xl font-bold">{value}</p>
       </div>
-      <p className="text-sm">{title}</p>
+      <p className="text-xs">{title}</p>
     </div>
   );
 };

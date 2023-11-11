@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 
-import { Ubuntu } from "next/font/google";
+import { Atkinson_Hyperlegible } from "next/font/google";
 import { useServerInsertedHTML } from "next/navigation";
 
-const ubuntu = Ubuntu({
+const ubuntu = Atkinson_Hyperlegible({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "700"],
   display: "swap",
   variable: "--font-ubuntu",
   fallback: ["system-ui", "Helvetica Neue", "Helvetica", "Arial"],
