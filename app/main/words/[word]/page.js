@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import SingleWord from "@/components/SingleWord";
+import SingleWord from "@/components/word/SingleWord";
 import axiosInstance from "@/lib/axiosInstance";
-import Loader from "@/components/Loader";
+import Loader from "@/components/common/Loader";
+import withAuth from "@/lib/withAuth";
 
 const Word = ({ params }) => {
   const wordId = params.word;
@@ -28,4 +29,4 @@ const Word = ({ params }) => {
   return <>{loading ? <Loader /> : <SingleWord word={word} />}</>;
 };
 
-export default Word;
+export default withAuth(Word);

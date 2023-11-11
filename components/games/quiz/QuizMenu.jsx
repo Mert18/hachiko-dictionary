@@ -1,5 +1,5 @@
 import React from "react";
-import GameIntroduction from "./GameIntroduction";
+import GameIntroduction from "../GameIntroduction";
 
 const QuizMenu = ({ handleStartGame }) => {
   return (

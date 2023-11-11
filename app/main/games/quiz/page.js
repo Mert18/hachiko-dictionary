@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import QuizMenu from "@/components/QuizMenu";
+import QuizMenu from "@/components/games/quiz/QuizMenu";
 import axiosInstance from "@/lib/axiosInstance";
-import QuizResult from "@/components/QuizResult";
-import QuizGame from "@/components/QuizGame";
-import GameHeader from "@/components/GameHeader";
+import QuizResult from "@/components/games/quiz/QuizResult";
+import QuizGame from "@/components/games/quiz/QuizGame";
+import GameHeader from "@/components/games/GameHeader";
 import { toast } from "react-toastify";
-import QuizIntermediary from "@/components/QuizIntermediary";
+import QuizIntermediary from "@/components/games/quiz/QuizIntermediary";
+import withAuth from "@/lib/withAuth";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -31,16 +32,16 @@ const Quiz = () => {
         ...current,
         {
           question: questions[currentIndex],
-          yourAnswer: choice
-        }
+          yourAnswer: choice,
+        },
       ]);
     } else {
       setIncorrectAnswers((current) => [
         ...current,
         {
           question: questions[currentIndex],
-          yourAnswer: choice
-        }
+          yourAnswer: choice,
+        },
       ]);
     }
     setCurrentIndex(currentIndex + 1);
@@ -55,22 +56,19 @@ const Quiz = () => {
       .then((res) => {
         setQuestions(res.data.data.questions);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   };
 
-  const handlePlayAgain = () => {
-  };
+  const handlePlayAgain = () => {};
 
   const handleCompleteQuiz = () => {
     axiosInstance
       .post("/api/v1/quiz/complete", {
         correctAnswers: correctAnswers.length,
         incorrectAnswers: incorrectAnswers.length,
-        difficulty: "medium"
+        difficulty: "medium",
       })
-      .then((res) => {
-      })
+      .then((res) => {})
       .catch((err) => {
         toast.error(err?.response?.data?.message);
       });
@@ -103,4 +101,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default withAuth(Quiz);

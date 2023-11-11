@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import Loader from "@/components/Loader";
+import Loader from "@/components/common/Loader";
 
 const WordHandler = ({ difficulty }) => {
   const [loading, setLoading] = useState();
