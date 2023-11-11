@@ -5,3 +5,22 @@
 body {
   font-family: var(--font-ubuntu);
 }
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-icon {
+  position: relative;
+  animation: rotateLogo 6s linear infinite;
+}
+
+.logo {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+}

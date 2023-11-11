@@ -18,7 +18,6 @@ const Main = ({ children }) => {
         }
       })
       .catch((err) => {
-        console.log("error!: ", err);
         toast.error(err.response.data.message);
       });
   };

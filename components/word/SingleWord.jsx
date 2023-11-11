@@ -8,7 +8,7 @@ import WordSentences from "./WordSentences";
 import WordHandler from "./WordHandler";
 import { useGlobalContext } from "@/app/Context/store";
 
-const Word = ({ word }) => {
+const SingleWord = ({ word }) => {
   const context = useGlobalContext();
 
   return (
@@ -30,4 +30,4 @@ const Word = ({ word }) => {
   );
 };
 
-export default Word;
+export default SingleWord;
