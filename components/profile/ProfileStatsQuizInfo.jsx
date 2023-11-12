@@ -14,6 +14,10 @@ const ProfileStatsQuizInfo = ({ quizInfo }) => {
         value={quizInfo.incorrectCount}
       />
       <ProfileStatsInfoCard
+        title={"Not Answered"}
+        value={quizInfo.notAnsweredCount}
+      />
+      <ProfileStatsInfoCard
         title={"Success Ratio"}
         value={quizInfo.correctRate}
       />
