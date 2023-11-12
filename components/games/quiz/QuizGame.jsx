@@ -7,12 +7,18 @@ const QuizGame = ({
   questions,
   currentIndex,
   handleAnswerQuestion,
+  setGameState,
+  gameState,
+  setIntermediateMessage,
 }) => {
   return (
     <div className="p-4 w-[80%]">
       <QuizQuestionHeader
         currentIndex={currentIndex}
         questionsCount={questions?.length}
+        setGameState={setGameState}
+        gameState={gameState}
+        setIntermediateMessage={setIntermediateMessage}
       />
       <QuizQuestion question={questions[currentIndex]} />
       <QuizQuestionChoices

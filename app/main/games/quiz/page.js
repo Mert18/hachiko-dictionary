@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import QuizMenu from "@/components/games/quiz/QuizMenu";
 import QuizResult from "@/components/games/quiz/QuizResult";
 import QuizGame from "@/components/games/quiz/QuizGame";
@@ -14,6 +14,9 @@ const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [intermediateMessage, setIntermediateMessage] = useState(
+    "There are no more questions."
+  );
 
   const handleStartGame = () => {
     setGameState("playing");
@@ -55,17 +58,21 @@ const Quiz = () => {
           questions={questions}
           currentIndex={currentIndex}
           handleAnswerQuestion={handleAnswerQuestion}
+          setGameState={setGameState}
+          gameState={gameState}
+          setIntermediateMessage={setIntermediateMessage}
         />
       )}
+
       {gameState === "intermediate" && (
         <QuizIntermediary
-          handleCompleteQuiz={handleCompleteQuiz(
-            setGameState,
-            correctAnswers,
-            incorrectAnswers
-          )}
+          handleCompleteQuiz={() =>
+            handleCompleteQuiz(setGameState, correctAnswers, incorrectAnswers)
+          }
+          intermediateMessage={intermediateMessage}
         />
       )}
+
       {gameState === "result" && (
         <QuizResult
           correctAnswers={correctAnswers}
