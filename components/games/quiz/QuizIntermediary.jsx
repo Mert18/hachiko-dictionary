@@ -3,7 +3,7 @@ import React from "react";
 const QuizIntermediary = ({ handleCompleteQuiz, intermediateMessage }) => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <p className="py-5">{intermediateMessage}</p>
+      <p className="py-5 text-primary">{intermediateMessage}</p>
       <button
         className="font-bold text-white bg-primary rounded-md text-sm py-2 px-4"
         onClick={() => handleCompleteQuiz()}
