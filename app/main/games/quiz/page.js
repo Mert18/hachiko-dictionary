@@ -41,6 +41,10 @@ const Quiz = () => {
         },
       ]);
     }
+    handleSkipQuestion();
+  };
+
+  const handleSkipQuestion = () => {
     setCurrentIndex(currentIndex + 1);
     if (currentIndex === questions.length - 1) {
       setGameState("intermediate");
@@ -61,6 +65,7 @@ const Quiz = () => {
           setGameState={setGameState}
           gameState={gameState}
           setIntermediateMessage={setIntermediateMessage}
+          handleSkipQuestion={handleSkipQuestion}
         />
       )}
 
