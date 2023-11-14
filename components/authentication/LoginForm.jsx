@@ -43,6 +43,8 @@ const LoginForm = () => {
           <InputText id="email" type="text" icon="mail" />
           <InputText id="password" type="password" icon="key" />
 
+          <p>test@gmail.com</p>
+          <p>test123</p>
           <div className={"flex justify-center items-center"}>
             <button
               className="my-2 text-white px-3 py-2 transition hover:translate-x-2"

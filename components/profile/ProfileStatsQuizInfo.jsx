@@ -3,7 +3,7 @@ import ProfileStatsInfoCard from "./ProfileStatsInfoCard";
 
 const ProfileStatsQuizInfo = ({ quizInfo }) => {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-col">
       <ProfileStatsInfoCard title={"Games Played"} value={quizInfo.gameCount} />
       <ProfileStatsInfoCard
         title={"Correct Answers"}
