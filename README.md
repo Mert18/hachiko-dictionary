@@ -1,5 +1,7 @@
 ## Hachiko Dictionary
 
+![Uploading DALL·E 2023-11-29 11.15.56 - A banner image for _Hachiko Dictionary_, a dictionary application, featuring Spring Boot, PostgreSQL, and React.js technologies. The main theme colors.png…]()
+
 ## !!Hosting is paused temporarily because of the increasing maintenance costs.!!
 
 Hachiko Dictionary offers an immersive learning experience for expanding one's vocabulary.
