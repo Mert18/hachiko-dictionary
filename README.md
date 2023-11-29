@@ -1,6 +1,7 @@
 ## Hachiko Dictionary
 
-![Uploading DALL·E 2023-11-29 11.15.56 - A banner image for _Hachiko Dictionary_, a dictionary application, featuring Spring Boot, PostgreSQL, and React.js technologies. The main theme colors.png…]()
+
+![hachiko dictionary banner](https://github.com/Mert18/hachiko-dictionary/assets/40024436/b4b0b586-a924-4b1f-a966-b2812c3ac749)
 
 ## !!Hosting is paused temporarily because of the increasing maintenance costs.!!
 
