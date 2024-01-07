@@ -28,4 +28,4 @@ Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](
 - Then open a pull request from your forked repository to this repository's `develop` branch.
 
 
-Please open issue if you notice any bug, or if you have any idea to implement in this project. Feel free and welcomed.
+Please open issue if you notice any bug, or if you have any idea to implement in this project. Feel free and welcome.
