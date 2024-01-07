@@ -1,13 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import QuizMenu from "@/components/games/quiz/QuizMenu";
-import axiosInstance from "@/lib/axiosInstance";
 import QuizResult from "@/components/games/quiz/QuizResult";
 import QuizGame from "@/components/games/quiz/QuizGame";
 import GameHeader from "@/components/games/GameHeader";
-import { toast } from "react-toastify";
 import QuizIntermediary from "@/components/games/quiz/QuizIntermediary";
 import withAuth from "@/lib/withAuth";
+import { fetchNewQuestions, handleCompleteQuiz } from "@/api/quiz";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -15,15 +14,13 @@ const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [intermediateMessage, setIntermediateMessage] = useState(
+    "There are no more questions."
+  );
 
   const handleStartGame = () => {
     setGameState("playing");
-    fetchNewQuestions();
-  };
-
-  const completeQuiz = () => {
-    handleCompleteQuiz();
-    setGameState("result");
+    fetchNewQuestions(setQuestions);
   };
 
   const handleAnswerQuestion = (choice) => {
@@ -44,34 +41,14 @@ const Quiz = () => {
         },
       ]);
     }
+    handleSkipQuestion();
+  };
+
+  const handleSkipQuestion = () => {
     setCurrentIndex(currentIndex + 1);
     if (currentIndex === questions.length - 1) {
       setGameState("intermediate");
     }
-  };
-
-  const fetchNewQuestions = async () => {
-    await axiosInstance
-      .get("/api/v1/quiz/generate/medium")
-      .then((res) => {
-        setQuestions(res.data.data.questions);
-      })
-      .catch((err) => {});
-  };
-
-  const handlePlayAgain = () => {};
-
-  const handleCompleteQuiz = () => {
-    axiosInstance
-      .post("/api/v1/quiz/complete", {
-        correctAnswers: correctAnswers.length,
-        incorrectAnswers: incorrectAnswers.length,
-        difficulty: "medium",
-      })
-      .then((res) => {})
-      .catch((err) => {
-        toast.error(err?.response?.data?.message);
-      });
   };
 
   return (
@@ -85,16 +62,26 @@ const Quiz = () => {
           questions={questions}
           currentIndex={currentIndex}
           handleAnswerQuestion={handleAnswerQuestion}
+          setGameState={setGameState}
+          gameState={gameState}
+          setIntermediateMessage={setIntermediateMessage}
+          handleSkipQuestion={handleSkipQuestion}
         />
       )}
+
       {gameState === "intermediate" && (
-        <QuizIntermediary handleCompleteQuiz={completeQuiz} />
+        <QuizIntermediary
+          handleCompleteQuiz={() =>
+            handleCompleteQuiz(setGameState, correctAnswers, incorrectAnswers)
+          }
+          intermediateMessage={intermediateMessage}
+        />
       )}
+
       {gameState === "result" && (
         <QuizResult
           correctAnswers={correctAnswers}
           incorrectAnswers={incorrectAnswers}
-          handlePlayAgain={handlePlayAgain}
         />
       )}
     </div>

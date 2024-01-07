@@ -5,7 +5,7 @@ const ProfileStats = ({ quizInfo }) => {
   return (
     <div className="text-primary">
       <div>
-        <p className="font-bold uppercase">Quiz Game Stats</p>
+        <p className="font-bold uppercase border-1 border-b">Quiz Game Stats</p>
         <ProfileStatsQuizInfo quizInfo={quizInfo} />
       </div>
     </div>

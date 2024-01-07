@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,10 +8,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        bounce200: "bounce 1s infinite 200ms",
-        bounce400: "bounce 1s infinite 400ms",
-      },
       fontFamily: {
         ubuntu: ["--font-ubuntu", "sans-serif"],
       },
