@@ -3,16 +3,11 @@
 
 ![hachiko dictionary banner](https://github.com/Mert18/hachiko-dictionary/assets/40024436/b4b0b586-a924-4b1f-a966-b2812c3ac749)
 
-## !!Hosting is paused temporarily because of the increasing maintenance costs.!!
-
-Hachiko Dictionary offers an immersive learning experience for expanding one's vocabulary.
-
-Mastering new words can be challenging, but Hachiko Dictionary provides effective aids such as example sentences, videos, and interactive games to enhance memorization. This comprehensive approach sets Hachiko Dictionary apart!
+Learn advanced words.
 
 Application here: https://hachikodictionary.com
 
-Server resides here: [https://github.com/Mert18/hachiko-dictionary-server](https://github.com/Mert18/hachiko-dictionary-server)
-
+Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](https://github.com/Mert18/hachiko-dictionary-server)
 
 ## Instructions to set up the development environment for frontend
 - Install Docker and ensure that `docker-compose version` returns a meaningful response. If not, install docker-compose seperately.
