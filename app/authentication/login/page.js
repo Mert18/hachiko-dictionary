@@ -23,7 +23,6 @@ const Login = () => {
 
   useEffect(() => {
     const word = generateRandomLetter();
-    console.log("adding word: ", word)
     setCollectedWords([...collectedWords, word]);
   }, [emailValue, passwordValue])
 

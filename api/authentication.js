@@ -36,7 +36,6 @@ export const register = async (values) => {
       return data;
     })
     .catch((err) => {
-      console.log("error!: ", err);
       toast.error(err?.response?.data?.message);
     });
 
