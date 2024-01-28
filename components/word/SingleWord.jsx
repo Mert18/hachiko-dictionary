@@ -11,10 +11,9 @@ import AudioPlayer from "../AudioPlayer";
 
 const SingleWord = ({ word }) => {
   const context = useGlobalContext();
-
   return (
     <div className="w-[90%] relative">
-      <WordTitle title={word.title} />
+      <WordTitle title={word.title} kind={word.kind} />
       {word.fileUrl && word.fileUrl !== "N/A" && 
         <AudioPlayer audioUrl={word.fileUrl} />
       }
