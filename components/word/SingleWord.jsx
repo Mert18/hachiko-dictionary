@@ -7,6 +7,7 @@ import WordDescriptions from "./WordDescriptions";
 import WordSentences from "./WordSentences";
 import WordHandler from "./WordHandler";
 import { useGlobalContext } from "@/app/Context/store";
+import AudioPlayer from "../AudioPlayer";
 
 const SingleWord = ({ word }) => {
   const context = useGlobalContext();
@@ -14,6 +15,9 @@ const SingleWord = ({ word }) => {
   return (
     <div className="w-[90%] relative">
       <WordTitle title={word.title} />
+      {word.fileUrl && word.fileUrl !== "N/A" && 
+        <AudioPlayer audioUrl={word.fileUrl} />
+      }
       {word.descriptions?.length > 0 && (
         <WordDescriptions descriptions={word.descriptions} />
       )}
