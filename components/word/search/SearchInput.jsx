@@ -12,6 +12,7 @@ const SearchInput = ({ handleSearchWord, setSearchText, searchText }) => {
   };
   return (
     <input
+      placeholder="Search for a word"
       className="border-white text-primary font-bold border-none outline-none p-2 rounded-sm"
       type="text"
       onChange={changeSearchInput}
