@@ -15,15 +15,14 @@ Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](
 - In the project directory, run `docker-compose up`
 - Trace the logs and ensure that the application accepts requests on port.
 - Fork the project.
-- Switch to `develop` branch: `git checkout develop`
 - Fetch the latest version of the branch: `git pull`
-- Pick an issue to work on it (Let everyone know you are working on it by writing a comment under the issue.). Let's say the issue id is `52`
-- Create and checkout a branch from the develop branch: `git checkout -b 52-issue-description`
+- Pick an issue to work on it (Let everyone know you are working on it by writing a comment under the issue.). Let's say the issue is a bug and has an id of `52`
+- Create and checkout a branch from the develop branch: `git checkout -b bugfix/52` or `git checkout -b feature/52`
 - After finishing your work, send the changes:
   ```
     git add .
     git commit -m "52: I made these changes etc."
-    git push -u origin 52-issue-description
+    git push -u origin bugfix/52
   ```
 - Then open a pull request from your forked repository to this repository's `main` branch.
 
