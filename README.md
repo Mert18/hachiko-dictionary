@@ -13,7 +13,7 @@ Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](
 - Install Docker and ensure that `docker-compose version` returns a meaningful response. If not, install docker-compose seperately.
 - Download the backend `git clone https://github.com/Mert18/hachiko-dictionary-server.git`
 - In the project directory, run `docker-compose up`
-- Trace the logs and ensure that the application accepts requests on :8888 port.
+- Trace the logs and ensure that the application accepts requests on port.
 - Fork the project.
 - Switch to `develop` branch: `git checkout develop`
 - Fetch the latest version of the branch: `git pull`
@@ -25,7 +25,7 @@ Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](
     git commit -m "52: I made these changes etc."
     git push -u origin 52-issue-description
   ```
-- Then open a pull request from your forked repository to this repository's `develop` branch.
+- Then open a pull request from your forked repository to this repository's `main` branch.
 
 
 Please open issue if you notice any bug, or if you have any idea to implement in this project. Feel free and welcome.
