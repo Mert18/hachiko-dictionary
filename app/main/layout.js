@@ -7,6 +7,7 @@ import QuoteHandler from "@/components/QuoteHandler";
 import Image from "next/image";
 import axiosInstance from "@/lib/axiosInstance";
 import Link from "next/link";
+import SearchWord from "@/components/word/search/SearchWord";
 
 const MainLayout = ({ children }) => {
   const context = useGlobalContext();
@@ -54,6 +55,11 @@ const MainLayout = ({ children }) => {
           <div className="p-4">
             <p className="text-xs font-bold text-white">Games</p>
             <SecondaryTabs />
+          </div>
+        </div>
+        <div className="p-4 flex justify-center items-center">
+          <div>
+            <SearchWord />
           </div>
         </div>
         <div className="p-4">

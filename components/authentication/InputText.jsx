@@ -8,7 +8,7 @@ const InputText = ({ id, type, icon }) => {
       <Image alt={icon} src={`/icons/${icon}.svg`} width={20} height={20} />
       <Field
         name={id}
-        className="text-center text-sm px-2 py-1 text-primary bg-white outline-none focus:border-b-2 border-b border-primary"
+        className="text-center text-sm px-2 py-1 text-primary outline-none focus:border-b-2 border-b border-primary input-field"
         type={type}
       />
     </div>

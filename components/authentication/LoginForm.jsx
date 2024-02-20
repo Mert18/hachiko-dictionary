@@ -1,12 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import { Form, Formik } from "formik";
+import React, { useEffect, useState } from "react";
+import { Form, Formik, useFormikContext } from "formik";
 import Loader from "../common/Loader";
 import Image from "next/image";
 import { object, string } from "yup";
 import { login } from "@/api/authentication";
 import InputText from "./InputText";
-import { useRouter } from "next/navigation";
 import ValidationError from "../common/ValidationError";
 
 const loginSchema = object().shape({
@@ -14,8 +13,18 @@ const loginSchema = object().shape({
   password: string().required("password is required"),
 });
 
-const LoginForm = () => {
+const LoginValues = ({setEmailValue, setPasswordValue}) => {
+  const { values } = useFormikContext();
+
+  useEffect(() => {
+    setEmailValue(values.email);
+    setPasswordValue(values.password);
+  }, [values]);
+}
+
+const LoginForm = ({setEmailValue, setPasswordValue}) => {
   const [loading, setLoading] = useState(false);
+  
   const initialValues = {
     email: "",
     password: "",
@@ -28,6 +37,7 @@ const LoginForm = () => {
       }
     }
   };
+
 
   return (
     <Formik
@@ -43,8 +53,6 @@ const LoginForm = () => {
           <InputText id="email" type="text" icon="mail" />
           <InputText id="password" type="password" icon="key" />
 
-          <p>test@gmail.com</p>
-          <p>test123</p>
           <div className={"flex justify-center items-center"}>
             <button
               className="my-2 text-white px-3 py-2 transition hover:translate-x-2"
@@ -62,6 +70,7 @@ const LoginForm = () => {
               )}
             </button>
           </div>
+          <LoginValues setEmailValue={setEmailValue} setPasswordValue={setPasswordValue} />
         </Form>
       )}
     </Formik>
