@@ -17,7 +17,7 @@ Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](
 - Fork the project.
 - Fetch the latest version of the branch: `git pull`
 - Pick an issue to work on it (Let everyone know you are working on it by writing a comment under the issue.). Let's say the issue is a bug and has an id of `52`
-- Create and checkout a branch from the develop branch: `git checkout -b bugfix/52` or `git checkout -b feature/52`
+- Create and checkout a branch from the main branch: `git checkout -b bugfix/52` or `git checkout -b feature/52`
 - After finishing your work, send the changes:
   ```
     git add .
