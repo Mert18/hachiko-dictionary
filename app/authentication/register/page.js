@@ -17,7 +17,7 @@ const Register = () => {
   }, [router]);
 
   return (
-    <div className="flex justify-center items-center w-full h-screen bg-white">
+    <div className="flex justify-center items-center w-full h-screen">
       <div className="flex flex-col justify-center items-center">
         {/* LOGO */}
         <div className={"my-5"}>
