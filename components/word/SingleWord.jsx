@@ -1,14 +1,14 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import WordTitle from "./WordTitle";
 import WordSynonyms from "./WordSynonyms";
 import WordAntonyms from "./WordAntonyms";
 import WordDescriptions from "./WordDescriptions";
 import WordSentences from "./WordSentences";
 import NextWord from "./NextWord";
-import { useGlobalContext } from "@/app/Context/store";
 import AudioPlayer from "../AudioPlayer";
 import axiosInstance from "@/lib/axiosInstance";
+import Loader from "../common/Loader";
 
 const SingleWord = () => {
   const [word, setWord] = useState({});
@@ -16,30 +16,31 @@ const SingleWord = () => {
 
   const getRandomWord = async () => {
     return await axiosInstance.get("/api/v1/word/random");
-  }
+  };
 
-  const handleNewWord = () => {
+  const handleNewWord = async () => {
     setLoading(true);
-    getRandomWord().then((res) => {
-      setWord(res.data.data);
-    }).catch((err) => {
-      console.log(err);
-    })
-    setLoading(false);
-  }
+    await getRandomWord()
+      .then((res) => {
+        setWord(res.data.data);
+      })
+      .finally(() => {
+        setLoading(false);
+      })
+  };
 
   useEffect(() => {
     handleNewWord();
   }, []);
 
-  const context = useGlobalContext();
-
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className="w-[90%] relative">
       <WordTitle title={word.title} kind={word.kind} />
-      {word.fileUrl && word.fileUrl !== "N/A" && 
+      {word.fileUrl && word.fileUrl !== "N/A" && (
         <AudioPlayer audioUrl={word.fileUrl} />
-      }
+      )}
       {word.description?.length > 0 && (
         <WordDescriptions descriptions={word.description} />
       )}
