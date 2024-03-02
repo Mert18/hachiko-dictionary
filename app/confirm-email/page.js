@@ -37,7 +37,7 @@ const Confirm = () => {
       </div>
       <div className={"flex flex-col justify-center items-center"}>
         {message && <p className={"font-bold my-4"}>{message}</p>}
-        <Link className="text-primary" href="/main">
+        <Link className="text-primary" href="/words">
           Click here to go to dashboard.
         </Link>
       </div>

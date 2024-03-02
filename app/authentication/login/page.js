@@ -28,7 +28,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isTokenValid(getFromLocalStorage("accessToken"))) {
-      router.push("/main");
+      router.push("/words");
     }
   }, [router]);
 

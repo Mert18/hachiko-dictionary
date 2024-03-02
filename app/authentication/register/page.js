@@ -12,7 +12,7 @@ const Register = () => {
 
   useEffect(() => {
     if (isTokenValid(getFromLocalStorage("accessToken"))) {
-      router.push("/main");
+      router.push("/words");
     }
   }, [router]);
 

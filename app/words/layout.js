@@ -7,7 +7,7 @@ import QuoteHandler from "@/components/QuoteHandler";
 import Image from "next/image";
 import axiosInstance from "@/lib/axiosInstance";
 import Link from "next/link";
-import SearchWord from "@/components/word/search/SearchWord";
+import withAuth from "@/lib/withAuth";
 
 const MainLayout = ({ children }) => {
   const context = useGlobalContext();
@@ -39,7 +39,7 @@ const MainLayout = ({ children }) => {
           <div
             className={"p-4 flex flex-col justify-center items-center w-full"}
           >
-            <Link href={"/main"}>
+            <Link href={"/words"}>
               <Image
                 alt={"logo"}
                 src={"/logo/logo-no-background.svg"}
@@ -57,14 +57,9 @@ const MainLayout = ({ children }) => {
             <SecondaryTabs />
           </div>
         </div>
-        <div className="p-4 flex justify-center items-center">
-          <div>
-            <SearchWord />
-          </div>
-        </div>
         <div className="p-4">
           <div className="p-4">
-            <QuoteHandler difficulty={context.difficulty} />
+            <QuoteHandler />
           </div>
         </div>
       </div>
@@ -72,4 +67,4 @@ const MainLayout = ({ children }) => {
   );
 };
 
-export default MainLayout;
+export default withAuth(MainLayout);

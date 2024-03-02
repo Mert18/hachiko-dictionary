@@ -5,7 +5,7 @@ const SecondaryTabs = () => {
   return (
     <ul className="flex flex-wrap justify-start items-start">
       <li>
-        <Tab name="quiz" icon="quiz" path="/main/games/quiz" />
+        <Tab name="quiz" icon="quiz" path="/words/games/quiz" />
       </li>
     </ul>
   );

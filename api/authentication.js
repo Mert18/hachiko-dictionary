@@ -20,7 +20,7 @@ export const login = async (values) => {
           role: res.data.data.role,
         })
       );
-      window.location.replace("/main");
+      window.location.replace("/words");
     })
     .catch((err) => {
       toast.error(err?.response?.data?.message);

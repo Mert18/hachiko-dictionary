@@ -1,15 +1,37 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import WordTitle from "./WordTitle";
 import WordSynonyms from "./WordSynonyms";
 import WordAntonyms from "./WordAntonyms";
 import WordDescriptions from "./WordDescriptions";
 import WordSentences from "./WordSentences";
-import WordHandler from "./WordHandler";
+import NextWord from "./NextWord";
 import { useGlobalContext } from "@/app/Context/store";
 import AudioPlayer from "../AudioPlayer";
+import axiosInstance from "@/lib/axiosInstance";
 
-const SingleWord = ({ word }) => {
+const SingleWord = () => {
+  const [word, setWord] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const getRandomWord = async () => {
+    return await axiosInstance.get("/api/v1/word/random");
+  }
+
+  const handleNewWord = () => {
+    setLoading(true);
+    getRandomWord().then((res) => {
+      setWord(res.data.data);
+    }).catch((err) => {
+      console.log(err);
+    })
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    handleNewWord();
+  }, []);
+
   const context = useGlobalContext();
 
   return (
@@ -28,7 +50,7 @@ const SingleWord = ({ word }) => {
         <WordSentences sentences={word.sentences} />
       )}
       <div className="p-4 absolute top-0 right-0">
-        <WordHandler difficulty={context.difficulty} />
+        <NextWord handleNewWord={handleNewWord} />
       </div>
     </div>
   );

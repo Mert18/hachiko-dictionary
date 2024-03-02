@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "@/lib/axiosInstance";
 
-const QuoteHandler = ({ difficulty }) => {
+const QuoteHandler = () => {
   const [quote, setQuote] = useState({});
   const getQuote = async () => {
     await axiosInstance
-      .get(`/api/v1/quote/one/${difficulty}`)
+      .get("/api/v1/quote/random")
       .then((res) => {
         setQuote(res.data.data);
       })
