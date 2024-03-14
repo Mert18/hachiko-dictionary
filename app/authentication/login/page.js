@@ -82,7 +82,7 @@ const Login = () => {
         </div>
       </div>
       {/* Test user */}
-      <div className="absolute top-0 right-0 bg-primary-400 opacity-30 p-2 rounded-md m-2">
+      <div className="absolute top-0 right-0 bg-primary-400 opacity-30 p-2 m-2">
         <p>test@gmail.com</p>
         <p>test123</p>
       </div>

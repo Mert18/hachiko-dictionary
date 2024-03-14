@@ -8,8 +8,10 @@ const InputText = ({ id, type, icon }) => {
       <Image alt={icon} src={`/icons/${icon}.svg`} width={20} height={20} />
       <Field
         name={id}
-        className="text-center text-sm px-2 py-1 text-primary outline-none focus:border-b-2 border-b border-primary input-field"
+        className="text-center text-sm px-2 py-1 text-primary outline-none focus:border-b-2 border-b bg-white border-primary input-field placeholder:text-primary placeholder:text-xs"
         type={type}
+        placeholder={id}
+        autoComplete="off"
       />
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import QuizMenu from "@/components/games/quiz/QuizMenu";
 import QuizResult from "@/components/games/quiz/QuizResult";
 import QuizGame from "@/components/games/quiz/QuizGame";
@@ -52,7 +52,7 @@ const Quiz = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center py-4 w-full h-full">
+    <div className="flex flex-col justify-center items-center py-4 w-full mt-5">
       <GameHeader title="Quiz" image="quiz" />
 
       {gameState === "menu" && <QuizMenu handleStartGame={handleStartGame} />}

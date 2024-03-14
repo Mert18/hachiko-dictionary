@@ -8,7 +8,7 @@ const WordHandler = ({handleNewWord}) => {
       className="flex justify-start items-center w-max"
       onClick={() => handleNewWord()}
     >
-      <div className="hover:cursor-pointer hover:translate-x-1 transition p-1 bg-white rounded-md">
+      <div className="hover:cursor-pointer hover:translate-x-1 transition p-1 bg-white">
         <Image
           src="/icons/play.svg"
           width={28}
