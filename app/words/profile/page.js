@@ -1,25 +1,18 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { useGlobalContext } from "@/app/Context/store";
-import ProfileIntroduction from "@/components/profile/ProfileIntroduction";
-import ProfileStats from "@/components/profile/ProfileStats";
-import withAuth from "@/lib/withAuth";
-import { getProfileQuizInfo } from "@/api/profile";
+import PageHeader from "@/components/PageHeader";
+import ProfileContent from "@/components/profile/ProfileContent";
+import React from "react";
+
+export const metadata = {
+  title: "Hachiko Dictionary | Profile"
+}
 
 const Profile = () => {
-  const { user } = useGlobalContext();
-  const [quizInfo, setQuizInfo] = useState({});
-
-  useEffect(() => {
-    getProfileQuizInfo(setQuizInfo);
-  }, []);
-
   return (
-    <div>
-      <ProfileIntroduction user={user} />
-      <ProfileStats quizInfo={quizInfo} />
+    <div className="w-full">
+      <PageHeader title="Profile" />
+      <ProfileContent />
     </div>
   );
 };
 
-export default withAuth(Profile);
+export default Profile;

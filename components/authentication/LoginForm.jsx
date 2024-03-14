@@ -50,7 +50,7 @@ const LoginForm = ({setEmailValue, setPasswordValue}) => {
       {({ errors, touched }) => (
         <Form>
           {showValidationErrors(errors, touched)}
-          <InputText id="email" type="text" icon="mail" />
+          <InputText id="email" type="text" icon="mail"  />
           <InputText id="password" type="password" icon="key" />
 
           <div className={"flex justify-center items-center"}>

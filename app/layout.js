@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
         GA_TRACKING_ID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
       />
       <Fonts />
-      <body>
+      <body className="bg-white">
         <GlobalContextProvider>
           <ToastContainer />
           {children}

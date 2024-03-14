@@ -5,7 +5,7 @@ const QuizIntermediary = ({ handleCompleteQuiz, intermediateMessage }) => {
     <div className="flex flex-col justify-center items-center">
       <p className="py-5 text-primary">{intermediateMessage}</p>
       <button
-        className="font-bold text-white bg-primary rounded-md text-sm py-2 px-4"
+        className="font-bold text-white bg-primary text-sm py-2 px-4"
         onClick={() => handleCompleteQuiz()}
       >
         Complete the quiz
