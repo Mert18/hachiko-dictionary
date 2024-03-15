@@ -8,7 +8,7 @@ export const metadata = {
 
 const Games = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full h-screen'>
       <PageHeader title='Games' />
       <ListGames />
     </div>
