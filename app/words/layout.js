@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
     <div className="flex flex-col justify-center items-center overflow-hidden">
       <Navbar />
 
-      <div className="flex justify-center items-start w-[40%]">
+      <div className="flex justify-center items-start words-layout">
         {children}
       </div>
     </div>
