@@ -58,4 +58,7 @@ body {
   .words-layout{
     width: 100%;
   }
+  .words-wrapper{
+    width: 100vw;
+}
 }
