@@ -50,3 +50,15 @@ body {
   border-bottom-right-radius: 0;
   border-top: none;
 }
+.words-layout{
+  width: 40%;
+}
+
+@media only screen and (max-width: 992px) {
+  .words-layout{
+    width: 100%;
+  }
+  .words-wrapper{
+    width: 100vw;
+}
+}
