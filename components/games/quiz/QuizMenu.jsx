@@ -8,7 +8,7 @@ const QuizMenu = ({ handleStartGame }) => {
         description={"Guess the word from the given description"}
       />
       <button
-        className="py-2 px-4 bg-primary text-white font-bold hover:bg-primary-200 transition-all"
+        className="py-2 px-4 bg-red text-white font-bold hover:bg-red-lighter transition-all"
         onClick={() => handleStartGame()}
       >
         Start Game

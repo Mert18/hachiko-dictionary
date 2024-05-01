@@ -9,7 +9,7 @@ const QuizResultAnswers = ({ incorrectAnswers }) => {
             return (
               <li
                 key={index}
-                className="bg-secondary text-white p-2 my-2 text-sm"
+                className="bg-red text-white p-2 my-2 text-sm"
               >
                 <b>Question</b>: {answer?.question?.description} <br />
                 <b>Your Answer</b>: {answer?.yourAnswer} <br />

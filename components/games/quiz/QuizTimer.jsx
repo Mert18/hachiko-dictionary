@@ -43,7 +43,7 @@ function QuizTimer({ onTimeUp }) {
   };
 
   // Render the formatted time
-  return <div className="text-primary">{formatTime(seconds)}</div>;
+  return <div className="text-red">{formatTime(seconds)}</div>;
 }
 
 export default QuizTimer;

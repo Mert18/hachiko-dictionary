@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-ubuntu);
+  background-color: #efefef;
 }
 
 @keyframes rotateLogo {
@@ -23,42 +23,4 @@ body {
 .logo {
   width: 100px; /* Adjust size as needed */
   height: 100px; /* Adjust size as needed */
-}
-
-.input-field::before,
-.input-field::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 40px;
-  border: 2px solid #000;
-  border-radius: 50%;
-}
-
-.input-field::before {
-  top: 0;
-  left: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom: none;
-}
-
-.input-field::after {
-  bottom: 0;
-  left: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top: none;
-}
-.words-layout{
-  width: 40%;
-}
-
-@media only screen and (max-width: 992px) {
-  .words-layout{
-    width: 100%;
-  }
-  .words-wrapper{
-    width: 100vw;
-}
 }

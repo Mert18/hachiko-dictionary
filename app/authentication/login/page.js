@@ -7,13 +7,6 @@ import { getFromLocalStorage } from "@/lib/LocalStorageHandler";
 import { useRouter } from "next/navigation";
 import { isTokenValid } from "@/lib/token";
 
-function generateRandomLetter() {
-  const charSet = 'abcdefghijklmnopqrstuvwxyz'; // Characters to choose from
-  const randomIndex = Math.floor(Math.random() * charSet.length);
-
-  return charSet.charAt(randomIndex);
-}
-
 const Login = () => {
   const router = useRouter();
   const [emailValue, setEmailValue] = useState("");
@@ -22,9 +15,22 @@ const Login = () => {
   const [collectedWords, setCollectedWords] = useState([]);
 
   useEffect(() => {
-    const word = generateRandomLetter();
-    setCollectedWords([...collectedWords, word]);
-  }, [emailValue, passwordValue])
+    if(emailValue.length === 0) {
+      setCollectedWords([]);
+    }else {
+      const word = emailValue.slice(-1);
+      setCollectedWords([...collectedWords, word]);
+    }
+  }, [emailValue])
+
+  useEffect(() => {
+    if(passwordValue.length === 0) {
+      setCollectedWords([]);
+    }else {
+      const word = passwordValue.slice(-1);
+      setCollectedWords([...collectedWords, word]);
+    }
+  }, [passwordValue])
 
   useEffect(() => {
     if (isTokenValid(getFromLocalStorage("accessToken"))) {
@@ -39,7 +45,7 @@ const Login = () => {
       return (
         <div
           key={index}
-          className="absolute top-0 left-0 opacity-30 text-primary-100 transform transition-all duration-700 text-3xl"
+          className="absolute top-0 left-0 opacity-30 text-red transform transition-all duration-700 text-xl"
           style={{ top: randomTop + 'px', left: randomLeft + 'px', rotate: randomLeft + 'deg' }}
         >
           {word}
@@ -49,13 +55,13 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-screen relative  overflow-hidden">
+    <div className="flex justify-center items-center w-full h-screen relative overflow-hidden">
       <div className="flex flex-col justify-center items-center">
         {/* LOGO */}
         <div className={"my-5"}>
           <Image
             alt={"logo"}
-            src="/logo/logo-no-background.svg"
+            src="/logo/logo-no-bg.svg"
             width={150}
             height={150}
           />
@@ -65,28 +71,20 @@ const Login = () => {
         <LoginForm setEmailValue={setEmailValue} setPasswordValue={setPasswordValue} />
 
         {/* REGISTER ROUTER */}
-        <div className={"text-primary text-xs"}>
+        <div className={"text-red text-xs my-4"}>
           <Link href="/authentication/register">
             <p>Do not have an account yet?</p>
-            <hr />
-            <div className={"flex justify-center items-center my-4"}>
-              <Image
-                alt={"user"}
-                className={"p-1"}
-                src="/icons/group_add.svg"
-                width={30}
-                height={30}
-              />
+            <div className={"flex justify-center items-center"}>
+              <p className="text-red text-sm underline">Register instead</p>
             </div>
           </Link>
         </div>
       </div>
       {/* Test user */}
-      <div className="absolute top-0 right-0 bg-primary-400 opacity-30 p-2 m-2">
+      <div className="absolute top-0 right-0 bg-white opacity-30 p-2 m-2">
         <p>test@gmail.com</p>
         <p>test123</p>
       </div>
-
 
       {(emailValue.length > 0 || passwordValue.length > 0 ) && renderWords()}
     </div>

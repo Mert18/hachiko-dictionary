@@ -15,7 +15,7 @@ const ListGames = () => {
 
   return (
     <div>
-      <ul className="flex flex-col items-start border border-primary">
+      <ul className="flex flex-col items-start border border-red">
         {games.map((game) => (
           <GameCard key={game.name} game={game} />
         ))}

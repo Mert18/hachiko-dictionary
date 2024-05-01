@@ -35,7 +35,7 @@ const SingleWord = () => {
   }, []);
 
   return (
-    <div className="w-full relative mt-10 p-2">
+    <div>
       {loading ? (
         <div className="h-96 flex items-center justify-center">
         <Loader />
@@ -59,9 +59,7 @@ const SingleWord = () => {
           {word.sentences?.length > 1 && (
             <WordSentences sentences={word.sentences} />
           )}
-          <div className="p-4 absolute top-0 right-0">
-            <NextWord handleNewWord={handleNewWord} />
-          </div>
+          <NextWord handleNewWord={handleNewWord} />
         </div>
       )}
     </div>

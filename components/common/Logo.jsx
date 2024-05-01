@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Image
       alt={"logo"}
-      src={"/logo/logo-no-background.svg"}
+      src={"/logo/logo-no-bg.svg"}
       width={100}
       height={100}
     />

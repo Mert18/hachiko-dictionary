@@ -1,10 +1,13 @@
 "use client";
-import Fonts from "@/components/Fonts";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
+import { Hahmlet } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalContextProvider } from "@/app/Context/store";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+
+const hahmlet = Hahmlet({ subsets: ["latin"] });
+
 
 export default function RootLayout({ children }) {
   return (
@@ -12,8 +15,7 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics
         GA_TRACKING_ID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
       />
-      <Fonts />
-      <body className="bg-white">
+      <body className={hahmlet.className}>
         <GlobalContextProvider>
           <ToastContainer />
           {children}

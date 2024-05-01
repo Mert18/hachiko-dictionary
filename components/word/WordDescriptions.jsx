@@ -8,7 +8,7 @@ const WordDescriptions = ({ descriptions }) => {
       <ul className="flex flex-col">
         {descriptions?.map((description) => {
           return (
-            <li className="py-2 text-primary" key={description}>
+            <li className="py-2 text-red" key={description}>
               {description}
             </li>
           );

@@ -58,18 +58,13 @@ const RegisterForm = () => {
 
           <div className={"flex justify-center items-center"}>
             <button
-              className="my-2 text-white px-3 py-2 transition hover:translate-x-2"
+              className="my-2 text-white px-3 py-2"
               type="submit"
             >
               {loading ? (
                 <Loader />
               ) : (
-                <Image
-                  alt={"user"}
-                  src={"/icons/group_add.svg"}
-                  width={20}
-                  height={20}
-                />
+                <p className="text-red text-sm">Register</p>
               )}
             </button>
           </div>

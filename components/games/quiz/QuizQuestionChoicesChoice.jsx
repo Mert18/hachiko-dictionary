@@ -5,7 +5,7 @@ const QuizQuestionChoicesChoice = ({ choice, handleAnswerQuestion, index }) => {
   return (
     <div className={marginStyle}>
       <button
-        className="text-primary bg-white border border-primary-100 p-2 w-full mt-2 h-14 hover:bg-primary hover:text-white transition-all"
+        className="text-primary bg-white border border-red-lighter p-2 w-full mt-2 h-14 hover:bg-red hover:text-white transition-all rounded-md"
         onClick={() => {
           handleAnswerQuestion(choice);
         }}

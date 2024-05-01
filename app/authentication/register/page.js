@@ -23,30 +23,22 @@ const Register = () => {
         <div className={"my-5"}>
           <Image
             alt={"logo"}
-            src="/logo/logo-no-background.svg"
+            src="/logo/logo-no-bg.svg"
             width={150}
             height={150}
           />
         </div>
 
         {/* FORM */}
-        <div className="w-60">
-          <RegisterForm />
-        </div>
+        <RegisterForm />
 
         {/* REGISTER ROUTER */}
-        <div className={"text-primary text-xs"}>
+        <div className={"text-red text-xs"}>
           <Link href="/authentication/login">
             <p>Already have an account?</p>
             <hr />
-            <div className={"flex justify-center items-center my-4"}>
-              <Image
-                alt={"door"}
-                className={"p-1"}
-                src="/icons/door_open.svg"
-                width={30}
-                height={30}
-              />
+            <div className={"flex justify-center items-center underline"}>
+              Login instead
             </div>
           </Link>
         </div>

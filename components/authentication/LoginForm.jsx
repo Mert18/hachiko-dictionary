@@ -55,18 +55,13 @@ const LoginForm = ({setEmailValue, setPasswordValue}) => {
 
           <div className={"flex justify-center items-center"}>
             <button
-              className="my-2 text-white px-3 py-2 transition hover:translate-x-2"
+              className="my-2 text-white px-3 py-2"
               type="submit"
             >
               {loading ? (
                 <Loader />
               ) : (
-                <Image
-                  alt={"door"}
-                  src={"/icons/door_open.svg"}
-                  width={20}
-                  height={20}
-                />
+                <p className="text-red text-sm">Login</p>
               )}
             </button>
           </div>
