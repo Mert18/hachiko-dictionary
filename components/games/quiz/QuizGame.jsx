@@ -14,7 +14,7 @@ const QuizGame = ({
   handleSkipQuestion,
 }) => {
   return (
-    <div className="p-4 w-[80%]">
+    <div>
       <QuizQuestionHeader
         currentIndex={currentIndex}
         questionsCount={questions?.length}

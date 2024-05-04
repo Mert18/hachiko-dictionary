@@ -7,6 +7,7 @@ import GameHeader from "@/components/games/GameHeader";
 import QuizIntermediary from "@/components/games/quiz/QuizIntermediary";
 import withAuth from "@/lib/withAuth";
 import { fetchNewQuestions, handleCompleteQuiz } from "@/api/quiz";
+import Loader from "@/components/common/Loader";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -57,7 +58,7 @@ const Quiz = () => {
 
       {gameState === "menu" && <QuizMenu handleStartGame={handleStartGame} />}
 
-      {gameState === "playing" && (
+      {gameState === "playing" && (questions.length === 0 ? <Loader /> : (
         <QuizGame
           questions={questions}
           currentIndex={currentIndex}
@@ -67,7 +68,7 @@ const Quiz = () => {
           setIntermediateMessage={setIntermediateMessage}
           handleSkipQuestion={handleSkipQuestion}
         />
-      )}
+      ))}
 
       {gameState === "intermediate" && (
         <QuizIntermediary

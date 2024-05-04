@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const NavbarLogo = () => {
   return (
-    <div className="col-start-1 md:col-end-4 col-end-2 h-full flex justify-center items-center">
+    <div className="h-full flex justify-center items-center">
       <Link
         href="/"
         className="hover:cursor-pointer flex justify-center items-center"
