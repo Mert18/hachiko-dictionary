@@ -5,7 +5,7 @@
 
 Learn advanced words.
 
-Application here: https://hachikodictionary.com
+Application here: https://hachikodictionary.com (***** Hosting paused temporarily. ******)
 
 Server code resides here: [https://github.com/Mert18/hachiko-dictionary-server](https://github.com/Mert18/hachiko-dictionary-server)
 
