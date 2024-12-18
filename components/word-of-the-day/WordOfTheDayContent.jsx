@@ -10,7 +10,7 @@ const WordOfTheDayContent = () => {
 
   const fetchWordOfTheDay = async () => {
     try {
-      const apiKey = "MYAPIKEY"; //CHANGE FOR WORDNIK API KEY
+      const apiKey = process.env.WORDNIK_API_KEY;
       const today = new Date();
       const formattedDate = today.toISOString().split("T")[0];
       const apiUrl = `https://api.wordnik.com/v4/words.json/wordOfTheDay?date=${formattedDate}&api_key=${apiKey}`;
